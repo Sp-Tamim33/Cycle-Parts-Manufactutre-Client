@@ -1,3 +1,8 @@
+.navbar {
+    background-color: #0a0f12;
+    color: white;
+}
+
 .navbar-logo-text {
     font-family: 'Space Mono', monospace;
 }

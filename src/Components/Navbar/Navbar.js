@@ -8,61 +8,61 @@ function Navbar() {
     const divRef = useRef();
     return (
         <div>
-            <nav>
+            <nav className="navbar">
                 <div className="mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="py-5 flex justify-between md:block">
+                    <div className="py-3 flex justify-between md:block">
                         <div className="flex justify-between items-center">
                             <div className="flex-shrink-0">
                                 <a href="/" className="flex">
                                     <img className="w-10 h-10 mt-1" src={NavbarLogo} alt="" />
-                                    <h1 className="text-3xl font-sans navbar-logo-text"><span className="text-orange-500 text-4xl font-semibold">C</span>ycles-<span className="text-orange-500 text-4xl font-semibold">T</span>ools</h1>
+                                    <h1 className="text-3xl font-sans navbar-logo-text"><span className="text-orange-500 text-4xl font-semibold">C</span>ycles-<span className="text-orange-500 text-4xl font-semibold">P</span>arts</h1>
                                 </a>
                             </div>
                             <div className="hidden md:block">
                                 <div className="ml-10 flex items-baseline space-x-4">
                                     <a
                                         href="home"
-                                        className="text-black hover:bg-orange-500 hover:text-white duration-500 px-3 py-2 rounded-md text-xl font-semibold"
+                                        className="text-white hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold"
                                     >
                                         Home
                                     </a>
 
                                     <a
                                         href="home"
-                                        className="text-black hover:bg-orange-500 hover:text-white duration-500 px-3 py-2 rounded-md text-xl font-semibold"
+                                        className="text-white hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold"
                                     >
                                         Portfolio
                                     </a>
 
                                     <a
                                         href="home"
-                                        className="text-black hover:bg-orange-500 hover:text-white duration-500 px-3 py-2 rounded-md text-xl font-semibold"
+                                        className="text-white hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold"
                                     >
                                         Products
                                     </a>
 
                                     <a
                                         href="home"
-                                        className="text-black hover:bg-orange-500 hover:text-white duration-500 px-3 py-2 rounded-md text-xl font-semibold"
+                                        className="text-white hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold"
                                     >
                                         Blog
                                     </a>
 
                                     <a
                                         href="home"
-                                        className="text-black hover:bg-orange-500 hover:text-white duration-500 px-3 py-2 rounded-md text-xl font-semibold"
+                                        className="text-white hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold"
                                     >
                                         Contact
                                     </a>
                                     <a
                                         href="home"
-                                        className="border-2 border-orange-500 text-black hover:bg-orange-500 hover:text-white duration-500 px-3 py-2 rounded-md text-xl font-semibold"
+                                        className="border-2 border-orange-500 text-white hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold"
                                     >
                                         SignIn
                                     </a>
                                     <a
                                         href="home"
-                                        className="text-black hover:bg-orange-500 hover:text-white duration-500 px-3 py-2 rounded-md text-xl font-semibold"
+                                        className="text-white hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold"
                                     >
                                         SignUp
                                     </a>
@@ -130,47 +130,47 @@ function Navbar() {
                             <div ref={divRef} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                                 <a
                                     href="home"
-                                    className="hover:bg-orange-500 hover:text-white text-black block px-3 py-2 rounded-md text-xl font-semibold"
+                                    className="hover:bg-orange-500 hover:text-black text-white block px-3 py-2 rounded-md text-xl font-semibold"
                                 >
                                     Home
                                 </a>
 
                                 <a
                                     href="home"
-                                    className="text-black hover:bg-orange-500 hover:text-white block px-3 py-2 rounded-md text-xl font-semibold"
+                                    className="text-white hover:bg-orange-500 hover:text-black block px-3 py-2 rounded-md text-xl font-semibold"
                                 >
                                     About
                                 </a>
 
                                 <a
                                     href="home"
-                                    className="text-black hover:bg-orange-500 hover:text-white block px-3 py-2 rounded-md text-xl font-semibold"
+                                    className="text-white hover:bg-orange-500 hover:text-black block px-3 py-2 rounded-md text-xl font-semibold"
                                 >
                                     Products
                                 </a>
 
                                 <a
                                     href="home"
-                                    className="text-black hover:bg-orange-500 hover:text-white block px-3 py-2 rounded-md text-xl font-semibold"
+                                    className="text-white hover:bg-orange-500 hover:text-black block px-3 py-2 rounded-md text-xl font-semibold"
                                 >
                                     Blog
                                 </a>
 
                                 <a
                                     href="home"
-                                    className="text-black hover:bg-orange-500 hover:text-white block px-3 py-2 rounded-md text-xl font-semibold"
+                                    className="text-white hover:bg-orange-500 hover:text-black block px-3 py-2 rounded-md text-xl font-semibold"
                                 >
                                     Contact
                                 </a>
                                 <a
                                     href="home"
-                                    className="text-black hover:bg-orange-500 hover:text-white block px-3 py-2 rounded-md text-xl font-semibold"
+                                    className="text-white hover:bg-orange-500 hover:text-black block px-3 py-2 rounded-md text-xl font-semibold"
                                 >
                                     SignIn
                                 </a>
                                 <a
                                     href="home"
-                                    className="text-black hover:bg-orange-500 hover:text-white block px-3 py-2 rounded-md text-xl font-semibold"
+                                    className="text-white hover:bg-orange-500 hover:text-black block px-3 py-2 rounded-md text-xl font-semibold"
                                 >
                                     SignUP
                                 </a>
