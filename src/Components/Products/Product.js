@@ -15,7 +15,7 @@ const Product = ({ product }) => {
                         <p className='text-md py-2 font-medium'><u><b>Minimub Order</b></u> :- {MinimumOrder}pcs</p>
                         <p className='text-md py-2 font-medium'><u><b>Available Item</b></u> :- {available}pcs</p>
                     </div>
-                    <button type="button" class="text-orange-500 w-full font-bold hover:text-white border-2 border-orange-500 hover:bg-orange-500 focus:ring-4 focus:outline-none focus:ring-orange-500 rounded-lg text-xl px-5 py-2.5 mt-5 duration-500 text-center mr-2 mb-2 dark:border-orange-500 dark:text-orange-500 dark:hover:text-white dark:hover:bg-orange-500 dark:focus:ring-orange-500">See More</button>
+                    <button type="button" class="hover:text-orange-500 w-full bg-orange-500 text-white font-bold border-2 border-orange-500 hover:bg-orange-200 focus:ring-4 focus:outline-none focus:ring-orange-500 rounded-lg text-xl px-5 py-2.5 mt-5 duration-500 text-center mr-2 mb-2 dark:border-orange-500 dark:text-white  dark:hover:bg-orange-200 dark:focus:ring-orange-500">See More</button>
                 </div>
             </div>
         </div>
