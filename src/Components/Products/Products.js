@@ -17,7 +17,7 @@ const Products = () => {
                     products.slice(0, 6).map(product => <Product key={product._id} product={product} />)
                 }
             </div>
-            <Link to='/products'><button type="button" class="hover:text-orange-500 md:ml-[600px] bg-orange-500 text-white font-bold border-2 border-orange-500 hover:bg-orange-200 focus:ring-4 focus:outline-none focus:ring-orange-500 rounded-lg text-xl px-5 py-2.5 mt-5 duration-500 text-center mr-2 mb-2 dark:border-orange-500 dark:text-white  dark:hover:bg-orange-200 dark:focus:ring-orange-500">See More</button></Link>
+            <Link to='/products' className="hover:text-orange-500 ml-20 md:ml-[650px] md:-mt-8 bg-orange-500 text-white font-bold border-2 border-orange-500 hover:bg-orange-200 focus:ring-4 focus:outline-none focus:ring-orange-500 rounded-lg text-xl px-5 py-2.5 mt-5 duration-500 text-center mr-2 mb-2 dark:border-orange-500 dark:text-white  dark:hover:bg-orange-200 dark:focus:ring-orange-500">See More Products.....</Link>
 
 
         </div>

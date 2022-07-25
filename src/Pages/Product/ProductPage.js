@@ -6,7 +6,7 @@ import Product from '../../Components/Products/Product'
 const ProductPage = () => {
     const [products] = useProducts();
     return (
-        <div className='text-white'>
+        <div>
             <Heading text="Our Latest Product" />
 
             <div className='grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto py-20'>
