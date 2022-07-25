@@ -7,6 +7,7 @@ import PortfolioPage from './Pages/Portfolio/PortfolioPage';
 import ProductPage from './Pages/Product/ProductPage';
 import SignInPage from './Pages/SignIn/SignInPage';
 import SignUpPage from './Pages/SignUp/SignUpPage';
+import Footer from './Components/Footer/Footer'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='signin' element={<SignInPage />} />
         <Route path='signup' element={<SignUpPage />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
