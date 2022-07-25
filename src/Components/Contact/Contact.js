@@ -29,16 +29,16 @@ const Contact = () => {
                     <h2 class="text-white text-2xl mb-1 font-medium title-font">Contact Form</h2>
                     <p class="leading-relaxed mb-5 text-gray-300">Need Help? or Have any question? Feel free to Contact us</p>
                     <div class="relative mb-4">
-                        <label for="name" class="leading-7 text-sm text-gray-300">Name</label>
-                        <input type="text" id="name" name="name" class="w-full bg-orange-200 rounded border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                        <label for="name" class="leading-7 text-sm text-white">Name</label>
+                        <input type="text" id="name" name="name" class="w-full bg-gray-300 rounded border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                     </div>
                     <div class="relative mb-4">
-                        <label for="email" class="leading-7 text-sm text-gray-300">Email</label>
-                        <input type="email" id="email" name="email" class="w-full bg-orange-200 rounded border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                        <label for="email" class="leading-7 text-sm text-white">Email</label>
+                        <input type="email" id="email" name="email" class="w-full bg-gray-300 rounded border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                     </div>
                     <div class="relative mb-4">
-                        <label for="message" class="leading-7 text-sm text-gray-300">Message</label>
-                        <textarea id="message" name="message" class="w-full bg-orange-200 rounded border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                        <label for="message" class="leading-7 text-sm text-white">Message</label>
+                        <textarea id="message" name="message" class="w-full bg-gray-300 rounded border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
                     </div>
                     <button type="button" class="hover:text-orange-500 w-full bg-orange-500 text-white font-semibold border-2 border-orange-500 hover:bg-orange-200 focus:ring-4 focus:outline-none focus:ring-orange-500 rounded-lg text-xl px-5 py-2.5 mt-5 duration-500 text-center mr-2 mb-2 dark:border-orange-500 dark:text-white  dark:hover:bg-orange-200 dark:focus:ring-orange-500">Send Message</button>
 

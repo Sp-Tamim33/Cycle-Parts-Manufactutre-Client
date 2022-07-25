@@ -85,7 +85,7 @@ const SignIn = () => {
                                     <Link
                                         to="/signup"
                                         class="text-orange-500 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
-                                    >Register</Link
+                                    >Register/Signup</Link
                                     >
                                 </p>
                             </div>
