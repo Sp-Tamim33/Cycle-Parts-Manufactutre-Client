@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import NavbarLogo from '../../assests/img/nagbarLogo.png'
 
 const Footer = () => {
@@ -18,16 +19,16 @@ const Footer = () => {
                             <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">Information</h2>
                             <nav class="list-none mb-10">
                                 <li>
-                                    <a href='home' class="text-gray-400 hover:text-white">Our Company</a>
+                                    <a href='/' class="text-gray-400 hover:text-white">Our Company</a>
                                 </li>
                                 <li>
-                                    <a href='home' class="text-gray-400 hover:text-white">Contact Us</a>
+                                    <a href='/' class="text-gray-400 hover:text-white">Contact Us</a>
                                 </li>
                                 <li>
-                                    <a href='home' class="text-gray-400 hover:text-white">Our Service</a>
+                                    <a href='/' class="text-gray-400 hover:text-white">Our Service</a>
                                 </li>
                                 <li>
-                                    <a href='home' class="text-gray-400 hover:text-white">Why We?</a>
+                                    <a href='/' class="text-gray-400 hover:text-white">Why We?</a>
                                 </li>
                             </nav>
                         </div>
@@ -35,16 +36,16 @@ const Footer = () => {
                             <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">Quick Links</h2>
                             <nav class="list-none mb-10">
                                 <li>
-                                    <a href='home' class="text-gray-400 hover:text-white">Home</a>
+                                    <Link to='/' class="text-gray-400 hover:text-white">Home</Link>
                                 </li>
                                 <li>
-                                    <a href='home' class="text-gray-400 hover:text-white">Products</a>
+                                    <Link to='/product' class="text-gray-400 hover:text-white">Products</Link>
                                 </li>
                                 <li>
-                                    <a href='home' class="text-gray-400 hover:text-white">Contact</a>
+                                    <Link to='/contact' class="text-gray-400 hover:text-white">Contact</Link>
                                 </li>
                                 <li>
-                                    <a href='home' class="text-gray-400 hover:text-white">Portfolio</a>
+                                    <Link to='/portfolio' class="text-gray-400 hover:text-white">Portfolio</Link>
                                 </li>
                             </nav>
                         </div>
@@ -52,16 +53,16 @@ const Footer = () => {
                             <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">Supports</h2>
                             <nav class="list-none mb-10">
                                 <li>
-                                    <a href='home' class="text-gray-400 hover:text-white">Return Policy</a>
+                                    <a href='/' class="text-gray-400 hover:text-white">Return Policy</a>
                                 </li>
                                 <li>
-                                    <a href='home' class="text-gray-400 hover:text-white">Money Back</a>
+                                    <a href='/' class="text-gray-400 hover:text-white">Money Back</a>
                                 </li>
                                 <li>
-                                    <a href='home' class="text-gray-400 hover:text-white">Online Support</a>
+                                    <a href='/' class="text-gray-400 hover:text-white">Online Support</a>
                                 </li>
                                 <li>
-                                    <a href='home' class="text-gray-400 hover:text-white">Customer Satisfaction</a>
+                                    <a href='/' class="text-gray-400 hover:text-white">Customer Satisfaction</a>
                                 </li>
                             </nav>
                         </div>
@@ -69,16 +70,16 @@ const Footer = () => {
                             <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">Conditions</h2>
                             <nav class="list-none mb-10">
                                 <li>
-                                    <a href='home' class="text-gray-400 hover:text-white">Terms &#38; Conditon</a>
+                                    <a href='/' class="text-gray-400 hover:text-white">Terms &#38; Conditon</a>
                                 </li>
                                 <li>
-                                    <a href='home' class="text-gray-400 hover:text-white">Privacy Policy</a>
+                                    <a href='/' class="text-gray-400 hover:text-white">Privacy Policy</a>
                                 </li>
                                 <li>
-                                    <a href='home' class="text-gray-400 hover:text-white">Delivary Terms</a>
+                                    <a href='/' class="text-gray-400 hover:text-white">Delivary Terms</a>
                                 </li>
                                 <li>
-                                    <a href='home' class="text-gray-400 hover:text-white">Security</a>
+                                    <a href='/' class="text-gray-400 hover:text-white">Security</a>
                                 </li>
                             </nav>
                         </div>
