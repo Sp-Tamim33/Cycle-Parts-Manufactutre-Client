@@ -1,16 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import useProducts from '../../Hooks/useProducts'
 import Heading from '../Heading/Heading';
 import Product from './Product';
 
 const Products = () => {
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-        const url = 'http://localhost:5000/products'
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, [])
+    const [products] = useProducts()
 
 
     return (
