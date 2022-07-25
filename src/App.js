@@ -8,6 +8,7 @@ import ProductPage from './Pages/Product/ProductPage';
 import SignInPage from './Pages/SignIn/SignInPage';
 import SignUpPage from './Pages/SignUp/SignUpPage';
 import Footer from './Components/Footer/Footer'
+import NF404 from './Components/NotFound/NF404';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='contact' element={<ContactPage />} />
         <Route path='signin' element={<SignInPage />} />
         <Route path='signup' element={<SignUpPage />} />
+        <Route path='*' element={<NF404 />} />
       </Routes>
       <Footer />
     </div>
