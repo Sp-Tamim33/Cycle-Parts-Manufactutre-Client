@@ -2,6 +2,36 @@ body {
     background-color: #0a0f12;
 }
 
+
+/* Section Heading Text Css Code */
+.section-heading-parent {
+    position: relative;
+}
+
+.section-heading::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 3px;
+    top: 140%;
+    background-color: #f97316;
+    left: 46%;
+    border-radius: 20px;
+}
+
+@media only screen and (max-width: 400px) {
+    .section-heading::after {
+        content: "";
+        position: absolute;
+        width: 120px;
+        height: 3px;
+        top: 120%;
+        background-color: #f97316;
+        left: 35%;
+        border-radius: 20px;
+    }
+}
+
 /* Banner Css Code */
 .banner {
     width: 100%;
@@ -82,4 +112,14 @@ body {
     border-radius: 30px;
     color: white;
     transform: rotateY(180deg);
+}
+
+
+/* Product Css Code */
+
+@media only screen and (max-width: 400px) {
+    .product-card {
+        margin-left: 0;
+        margin: 20px;
+    }
 }

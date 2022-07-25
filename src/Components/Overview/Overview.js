@@ -1,4 +1,5 @@
 import React from 'react';
+import Heading from '../Heading/Heading';
 import OverviewCard from './OverviewCard';
 
 const Overview = () => {
@@ -12,7 +13,7 @@ const Overview = () => {
     const ClientsText = "A happy customer isn't just someone who makes a purchase with you today. A truly happy customer is one who will be loyal to you and your business for a long time to come. Plus, customer loyalty and happiness have a tendency to spread."
     return (
         <div className='py-[60px]'>
-            <h1 className='text-4xl text-center text-white font-sans font font-semibold'>Worldwide Trust Our Company</h1>
+            <Heading text="Worldwide Trust Our Company" />
             <p className='text-xl text-center text-gray-400 py-5 font-sans font font-semibold'>Our Business  Area, Projects And Clients
             </p>
             <div className='grid grid-cols-1 md:grid-cols-4'>
