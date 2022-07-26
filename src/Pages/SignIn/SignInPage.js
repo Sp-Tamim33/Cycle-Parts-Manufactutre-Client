@@ -6,6 +6,7 @@ import Loading from '../../Components/Loading/Loading';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../FirebaseInit/Firerebase.Init';
 import { useForm } from "react-hook-form";
+import toast from 'react-hot-toast';
 
 
 
@@ -25,10 +26,10 @@ const SignIn = () => {
 
     // Google login
     if (googleError) {
-        alert(googleError)
+        toast.error(googleError.message)
     }
     if (emailAndPassError) {
-        alert(emailAndPassError)
+        toast.error(emailAndPassError.message)
     }
 
     if (googleLoading || emailAndPassLoading) {

@@ -9,11 +9,14 @@ import SignInPage from './Pages/SignIn/SignInPage';
 import SignUpPage from './Pages/SignUp/SignUpPage';
 import Footer from './Components/Footer/Footer'
 import NF404 from './Components/NotFound/NF404';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
     <div>
       <Navbar />
+      <Toaster />
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='home' element={<HomePage />} />
@@ -22,6 +25,7 @@ function App() {
         <Route path='contact' element={<ContactPage />} />
         <Route path='signin' element={<SignInPage />} />
         <Route path='signup' element={<SignUpPage />} />
+        <Route path='dashboard' element={<Dashboard />} />
         <Route path='*' element={<NF404 />} />
       </Routes>
       <Footer />

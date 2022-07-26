@@ -84,7 +84,7 @@ function Navbar() {
                                         user ?
 
 
-                                            <Link to='/'>
+                                            <Link to='/dashboard'>
                                                 <img src={userProfile} className='h-12 w-12 absolute -mt-8 -ml-8 avatar ring rounded-full ring-orange-500' alt="" />
                                             </Link>
 
@@ -207,7 +207,7 @@ function Navbar() {
                                     user ?
 
 
-                                        <Link to='/'>
+                                        <Link to='/dashboard'>
                                             <img src={userProfile} className='h-12 w-12 ml-5 my-5 avatar ring rounded-full ring-orange-500' alt="" />
                                         </Link>
 

@@ -7,6 +7,7 @@ import auth from '../../FirebaseInit/Firerebase.Init';
 import Loading from '../../Components/Loading/Loading';
 
 import { useForm } from "react-hook-form";
+import toast from 'react-hot-toast';
 
 
 const SignUp = () => {
@@ -25,10 +26,10 @@ const SignUp = () => {
 
     // Google login
     if (googleError) {
-        alert(googleError)
+        toast.error(googleError)
     }
     if (emailAndPassError) {
-        alert(emailAndPassError)
+        toast.error(emailAndPassError)
     }
     if (googleLoading || emailAndPassLoading) {
         return <Loading />;
@@ -43,7 +44,7 @@ const SignUp = () => {
         console.log(data)
         createUserWithEmailAndPassword(data.email, data.password)
         reset()
-        alert('Signup successfully done!')
+        toast.success("Signup Successfully Done !")
     };
 
 
