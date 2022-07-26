@@ -4,13 +4,33 @@ import './Navbar.css'
 import NavbarLogo from './../../assests/img/nagbarLogo.png'
 import ActiveLink from "../ActiveLink/ActiveLink";
 import { Link } from "react-router-dom";
+import userProfile from '../../assests/img/userProfile.jpg'
+import auth from "../../FirebaseInit/Firerebase.Init";
+import { useAuthState } from "react-firebase-hooks/auth";
+import Loading from "../Loading/Loading";
+import { signOut } from "firebase/auth";
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const divRef = useRef();
+
+    const [user, loading, error] = useAuthState(auth);
+    if (loading) {
+        return <Loading />
+    }
+    if (error) {
+        alert(error)
+    }
+
+
+    // Sign Out
+    const logout = () => {
+        signOut(auth);
+    };
+
     return (
         <div>
-            <nav className="navbar">
+            <nav className="navbar relative">
                 <div className="mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="py-3 flex justify-between md:block">
                         <div className="flex justify-between items-center">
@@ -22,48 +42,72 @@ function Navbar() {
                             </div>
                             <div className="hidden md:block">
                                 <div className="ml-10 flex items-baseline space-x-4">
-                                    <ActiveLink
-                                        to="/"
-                                        className="text-white hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold"
-                                    >
-                                        Home
-                                    </ActiveLink>
+                                    <div className={`${user && 'mr-8'}`}>
+                                        <ActiveLink
+                                            to="/"
+                                            className={`text-white hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold mx-3`}
+                                        >
+                                            Home
+                                        </ActiveLink>
 
-                                    <ActiveLink
-                                        to="/portfolio"
-                                        className="text-white hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold"
-                                    >
-                                        Portfolio
-                                    </ActiveLink>
+                                        <ActiveLink
+                                            to="/portfolio"
+                                            className={`text-white hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold mx-3`}
+                                        >
+                                            Portfolio
+                                        </ActiveLink>
 
-                                    <ActiveLink
-                                        to="/products"
-                                        className="text-white hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold"
-                                    >
-                                        Products
-                                    </ActiveLink>
+                                        <ActiveLink
+                                            to="/products"
+                                            className={`text-white hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold mx-3`}
+                                        >
+                                            Products
+                                        </ActiveLink>
 
-                                    <ActiveLink
-                                        to="/contact"
-                                        className="text-white hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold"
-                                    >
-                                        Contact
-                                    </ActiveLink>
-                                    <ActiveLink
-                                        to="/signin"
-                                        className="border-2 border-orange-500 text-white hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold"
-                                    >
-                                        SignIn
-                                    </ActiveLink>
-                                    <ActiveLink
-                                        to="/signup"
-                                        className="text-white hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold"
-                                    >
-                                        SignUp
-                                    </ActiveLink>
+                                        <ActiveLink
+                                            to="/contact"
+                                            className={`text-white hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold mx-3`}
+                                        >
+                                            Contact
+                                        </ActiveLink>
+                                        {
+                                            user && <button
+                                                onClick={logout}
+                                                className="text-white hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold mx-3"
+                                            >
+                                                Signuot
+                                            </button>
+                                        }
+                                    </div>
+
+                                    {
+                                        user ?
+
+
+                                            <Link to='/'>
+                                                <img src={userProfile} className='h-12 w-12 absolute -mt-8 -ml-8 avatar ring rounded-full ring-orange-500' alt="" />
+                                            </Link>
+
+                                            :
+                                            <>
+                                                <ActiveLink
+                                                    to="/signin"
+                                                    className="border-2 border-orange-500 text-white hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold"
+                                                >
+                                                    SignIn
+                                                </ActiveLink>
+                                                <ActiveLink
+                                                    to="/signup"
+                                                    className="text-white hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold"
+                                                >
+                                                    SignUp
+                                                </ActiveLink>
+                                            </>
+
+                                    }
                                 </div>
                             </div>
-                        </div>
+                        </div >
                         <div className="-mr-2 flex md:hidden">
                             <button
                                 onClick={() => setIsOpen(!isOpen)}
@@ -108,8 +152,8 @@ function Navbar() {
                                 )}
                             </button>
                         </div>
-                    </div>
-                </div>
+                    </div >
+                </div >
 
                 <Transition
                     show={isOpen}
@@ -151,26 +195,47 @@ function Navbar() {
                                 >
                                     Contact
                                 </ActiveLink>
-                                <ActiveLink
-                                    to="/signin"
-                                    className="text-white hover:bg-orange-500 hover:text-black block px-3 py-2 rounded-md text-xl font-semibold"
-                                >
-                                    SignIn
-                                </ActiveLink>
-                                <ActiveLink
-                                    to="/signup"
-                                    className="text-white hover:bg-orange-500 hover:text-black block px-3 py-2 rounded-md text-xl font-semibold"
-                                >
-                                    SignUP
-                                </ActiveLink>
+                                {
+                                    user && <button
+                                        onClick={logout}
+                                        className="text-white hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold"
+                                    >
+                                        Signuot
+                                    </button>
+                                }
+                                {
+                                    user ?
+
+
+                                        <Link to='/'>
+                                            <img src={userProfile} className='h-12 w-12 ml-5 my-5 avatar ring rounded-full ring-orange-500' alt="" />
+                                        </Link>
+
+                                        :
+                                        <>
+                                            <ActiveLink
+                                                to="/signin"
+                                                className="border-2 block border-orange-500 text-white hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold"
+                                            >
+                                                SignIn
+                                            </ActiveLink>
+                                            <ActiveLink
+                                                to="/signup"
+                                                className="text-white block hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold"
+                                            >
+                                                SignUp
+                                            </ActiveLink>
+                                        </>
+
+                                }
                             </div>
                         </div>
                     )}
                 </Transition>
-            </nav>
+            </nav >
 
 
-        </div>
+        </div >
     );
 }
 

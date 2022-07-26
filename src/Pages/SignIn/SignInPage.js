@@ -5,7 +5,6 @@ import { Link, Navigate } from 'react-router-dom';
 import Loading from '../../Components/Loading/Loading';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../FirebaseInit/Firerebase.Init';
-import { toast } from 'react-toastify';
 import { useForm } from "react-hook-form";
 
 
@@ -25,17 +24,13 @@ const SignIn = () => {
     ] = useSignInWithEmailAndPassword(auth);
 
     // Google login
-    if (googleError || emailAndPassError) {
-        return toast.error(googleError.message, {
-            position: "top-center",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        });
+    if (googleError) {
+        alert(googleError)
     }
+    if (emailAndPassError) {
+        alert(emailAndPassError)
+    }
+
     if (googleLoading || emailAndPassLoading) {
         return <Loading />;
     }
@@ -51,17 +46,7 @@ const SignIn = () => {
         reset()
     };
 
-    if (googleError) {
-        return toast.error(googleError.message, {
-            position: "top-center",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        });
-    }
+
     if (googleLoading) {
         return <Loading />;
     }

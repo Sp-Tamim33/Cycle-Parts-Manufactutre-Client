@@ -5,7 +5,6 @@ import { Link, Navigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../FirebaseInit/Firerebase.Init';
 import Loading from '../../Components/Loading/Loading';
-import { toast } from 'react-toastify';
 
 import { useForm } from "react-hook-form";
 
@@ -25,16 +24,11 @@ const SignUp = () => {
 
 
     // Google login
-    if (googleError || emailAndPassError) {
-        return toast.error(googleError.message, {
-            position: "top-center",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        });
+    if (googleError) {
+        alert(googleError)
+    }
+    if (emailAndPassError) {
+        alert(emailAndPassError)
     }
     if (googleLoading || emailAndPassLoading) {
         return <Loading />;
@@ -49,6 +43,7 @@ const SignUp = () => {
         console.log(data)
         createUserWithEmailAndPassword(data.email, data.password)
         reset()
+        alert('Signup successfully done!')
     };
 
 
