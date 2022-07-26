@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react';
 import loginPic from '../../assests/img/login.svg'
 import { Link, Navigate } from 'react-router-dom';
 import Loading from '../../Components/Loading/Loading';
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../FirebaseInit/Firerebase.Init';
 import { toast } from 'react-toastify';
 import { useForm } from "react-hook-form";
@@ -16,9 +16,16 @@ const SignIn = () => {
     // for submit 
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
+    // Signin with email and password
+    const [
+        signInWithEmailAndPassword,
+        emailAndPassUser,
+        emailAndPassLoading,
+        emailAndPassError,
+    ] = useSignInWithEmailAndPassword(auth);
 
     // Google login
-    if (googleError) {
+    if (googleError || emailAndPassError) {
         return toast.error(googleError.message, {
             position: "top-center",
             autoClose: 2000,
@@ -29,10 +36,10 @@ const SignIn = () => {
             progress: undefined,
         });
     }
-    if (googleLoading) {
+    if (googleLoading || emailAndPassLoading) {
         return <Loading />;
     }
-    if (googleUser) {
+    if (googleUser || emailAndPassUser) {
         return <Navigate to='/' replace={true} />
     }
 
@@ -40,6 +47,7 @@ const SignIn = () => {
     // Signup Submit 
     const onSubmit = data => {
         console.log(data)
+        signInWithEmailAndPassword(data.email, data.password)
         reset()
     };
 
