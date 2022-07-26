@@ -2,7 +2,7 @@ import React from 'react';
 import { Icon } from '@iconify/react';
 import Signup from '../../assests/img/signup.svg'
 import { Link, Navigate } from 'react-router-dom';
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../FirebaseInit/Firerebase.Init';
 import Loading from '../../Components/Loading/Loading';
 import { toast } from 'react-toastify';
@@ -15,10 +15,17 @@ const SignUp = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     // for submit 
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    //Signup Email nad Pass
+    const [
+        createUserWithEmailAndPassword,
+        emailAndPassUser,
+        emailAndPassLoading,
+        emailAndPassError,
+    ] = useCreateUserWithEmailAndPassword(auth);
 
 
     // Google login
-    if (googleError) {
+    if (googleError || emailAndPassError) {
         return toast.error(googleError.message, {
             position: "top-center",
             autoClose: 2000,
@@ -29,10 +36,10 @@ const SignUp = () => {
             progress: undefined,
         });
     }
-    if (googleLoading) {
+    if (googleLoading || emailAndPassLoading) {
         return <Loading />;
     }
-    if (googleUser) {
+    if (googleUser || emailAndPassUser) {
         return <Navigate to='/' replace={true} />
     }
 
@@ -40,6 +47,7 @@ const SignUp = () => {
     // Signup Submit 
     const onSubmit = data => {
         console.log(data)
+        createUserWithEmailAndPassword(data.email, data.password)
         reset()
     };
 
