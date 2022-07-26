@@ -9,10 +9,22 @@ import SignInPage from './Pages/SignIn/SignInPage';
 import SignUpPage from './Pages/SignUp/SignUpPage';
 import Footer from './Components/Footer/Footer'
 import NF404 from './Components/NotFound/NF404';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
     <div>
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <Navbar />
       <Routes>
         <Route path='/' element={<HomePage />} />

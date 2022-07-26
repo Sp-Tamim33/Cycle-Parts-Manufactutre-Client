@@ -1,26 +1,31 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
 import loginPic from '../../assests/img/login.svg'
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import Loading from '../../Components/Loading/Loading';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../FirebaseInit/Firerebase.Init';
+import { toast } from 'react-toastify';
 
 const SignIn = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
 
     if (googleError) {
-        return (
-            console.log(googleError.message)
-        );
+        return toast.error(googleError.message, {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
     }
     if (googleLoading) {
         return <Loading />;
     }
     if (googleUser) {
-        return (
-            console.log(googleUser)
-        );
+        return <Navigate to='/' replace={true} />
     }
     return (
         <section class="h-screen">

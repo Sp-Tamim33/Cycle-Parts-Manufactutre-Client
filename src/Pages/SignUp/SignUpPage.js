@@ -1,26 +1,31 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
 import Signup from '../../assests/img/signup.svg'
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../FirebaseInit/Firerebase.Init';
-import Loading from '../../Components/Loading/Loading'
+import Loading from '../../Components/Loading/Loading';
+import { toast } from 'react-toastify';
 
 const SignUp = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
 
     if (googleError) {
-        return (
-            console.log(googleError.message)
-        );
+        return toast.error(googleError.message, {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
     }
     if (googleLoading) {
         return <Loading />;
     }
     if (googleUser) {
-        return (
-            console.log(googleUser.email)
-        );
+        return <Navigate to='/' replace={true} />
     }
 
 
