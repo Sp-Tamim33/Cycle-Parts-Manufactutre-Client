@@ -11,6 +11,7 @@ import Footer from './Components/Footer/Footer'
 import NF404 from './Components/NotFound/NF404';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import { Toaster } from 'react-hot-toast';
+import RequireAuth from './Components/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -25,7 +26,11 @@ function App() {
         <Route path='contact' element={<ContactPage />} />
         <Route path='signin' element={<SignInPage />} />
         <Route path='signup' element={<SignUpPage />} />
-        <Route path='dashboard' element={<Dashboard />} />
+        <Route path='dashboard' element={
+          <RequireAuth>
+            <Dashboard />
+          </RequireAuth>
+        } />
         <Route path='*' element={<NF404 />} />
       </Routes>
       <Footer />

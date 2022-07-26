@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Icon } from '@iconify/react';
 import Signup from '../../assests/img/signup.svg'
-import { Link, Navigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../FirebaseInit/Firerebase.Init';
 import Loading from '../../Components/Loading/Loading';
@@ -23,7 +23,16 @@ const SignUp = () => {
         emailAndPassError,
     ] = useCreateUserWithEmailAndPassword(auth);
 
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
 
+    useEffect(() => {
+        if (emailAndPassUser || googleUser) {
+            navigate(from);
+            toast.success('Account Created Successfully')
+        }
+    }, [emailAndPassUser, from, googleUser, navigate]);
     // Google login
     if (googleError) {
         toast.error(googleError)

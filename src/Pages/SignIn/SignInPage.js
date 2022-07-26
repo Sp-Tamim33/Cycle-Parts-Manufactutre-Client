@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Icon } from '@iconify/react';
 import loginPic from '../../assests/img/login.svg'
-import { Link, Navigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../../Components/Loading/Loading';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../FirebaseInit/Firerebase.Init';
@@ -23,6 +23,17 @@ const SignIn = () => {
         emailAndPassLoading,
         emailAndPassError,
     ] = useSignInWithEmailAndPassword(auth);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
+    useEffect(() => {
+        if (emailAndPassUser || googleUser) {
+            navigate(from);
+            toast.success('account logged !')
+        }
+    }, [emailAndPassUser, from, googleUser, navigate]);
 
     // Google login
     if (googleError) {
