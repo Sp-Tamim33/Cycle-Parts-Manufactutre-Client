@@ -4,7 +4,6 @@ import './Navbar.css'
 import NavbarLogo from './../../assests/img/nagbarLogo.png'
 import ActiveLink from "../ActiveLink/ActiveLink";
 import { Link } from "react-router-dom";
-import userProfile from '../../assests/img/userProfile.jpg'
 import auth from "../../FirebaseInit/Firerebase.Init";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Loading from "../Loading/Loading";
@@ -84,8 +83,8 @@ function Navbar() {
                                         user ?
 
 
-                                            <Link to='/dashboard'>
-                                                <img src={userProfile} className='h-12 w-12 absolute -mt-8 -ml-8 avatar ring rounded-full ring-orange-500' alt="" />
+                                            <Link to='/dashboard' className="border-2 border-orange-500 text-white hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold">
+                                                Dashboard
                                             </Link>
 
                                             :
@@ -207,8 +206,8 @@ function Navbar() {
                                     user ?
 
 
-                                        <Link to='/dashboard'>
-                                            <img src={userProfile} className='h-12 w-12 ml-5 my-5 avatar ring rounded-full ring-orange-500' alt="" />
+                                        <Link to='/dashboard' className="block border-2 border-orange-500 text-white hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold">
+                                            Dashboard
                                         </Link>
 
                                         :
