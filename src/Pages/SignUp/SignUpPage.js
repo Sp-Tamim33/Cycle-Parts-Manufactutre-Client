@@ -2,8 +2,29 @@ import React from 'react';
 import { Icon } from '@iconify/react';
 import Signup from '../../assests/img/signup.svg'
 import { Link } from 'react-router-dom';
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import auth from '../../FirebaseInit/Firerebase.Init';
+import Loading from '../../Components/Loading/Loading'
 
 const SignUp = () => {
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+
+    if (googleError) {
+        return (
+            console.log(googleError.message)
+        );
+    }
+    if (googleLoading) {
+        return <Loading />;
+    }
+    if (googleUser) {
+        return (
+            console.log(googleUser.email)
+        );
+    }
+
+
+
     return (
         <section class="h-screen">
             <div class="px-6 h-full text-white">
@@ -25,6 +46,7 @@ const SignUp = () => {
                             <div class="flex flex-row items-center justify-center lg:justify-start">
                                 <p class="text-lg mb-0 mr-4">Signup with</p>
                                 <button
+                                    onClick={() => signInWithGoogle()}
                                     type="button"
                                     data-mdb-ripple="true"
                                     data-mdb-ripple-color="light"
