@@ -12,6 +12,7 @@ import NF404 from './Components/NotFound/NF404';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import { Toaster } from 'react-hot-toast';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
+import Purchase from './Pages/Purchase/Purchase';
 
 function App() {
   return (
@@ -31,6 +32,10 @@ function App() {
             <Dashboard />
           </RequireAuth>
         } />
+        <Route path='purchase/:id' element={
+          <RequireAuth>
+            <Purchase />
+          </RequireAuth>} />
         <Route path='*' element={<NF404 />} />
       </Routes>
       <Footer />

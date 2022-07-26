@@ -1,8 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../../Shared/HomePage.css'
 
 const Product = ({ product }) => {
     const { name, img, description, price, MinimumOrder, available } = product;
+    const navigate = useNavigate()
+    const handlePurchase = () => {
+        navigate(`/purchase/${product._id}`)
+    }
     return (
         <div>
             <div class="card card-compact w-96 bg-base-100 shadow-xl bg-orange-200 m-5 rounded-md product-card">
@@ -15,7 +20,7 @@ const Product = ({ product }) => {
                         <p className='text-md py-2 font-medium text-black'><u><b>Minimub Order</b></u> :- {MinimumOrder}pcs</p>
                         <p className='text-md py-2 font-medium text-black'><u><b>Available Item</b></u> :- {available}pcs</p>
                     </div>
-                    <button type="button" class="hover:text-orange-500 w-full bg-orange-500 text-white font-bold border-2 border-orange-500 hover:bg-orange-200 focus:ring-4 focus:outline-none focus:ring-orange-500 rounded-lg text-xl px-5 py-2.5 mt-5 duration-500 text-center mr-2 mb-2 dark:border-orange-500 dark:text-white  dark:hover:bg-orange-200 dark:focus:ring-orange-500">Buy Now</button>
+                    <button onClick={() => handlePurchase(product._id)} type="button" class="hover:text-orange-500 w-full bg-orange-500 text-white font-bold border-2 border-orange-500 hover:bg-orange-200 focus:ring-4 focus:outline-none focus:ring-orange-500 rounded-lg text-xl px-5 py-2.5 mt-5 duration-500 text-center mr-2 mb-2 dark:border-orange-500 dark:text-white  dark:hover:bg-orange-200 dark:focus:ring-orange-500">Buy Now</button>
                 </div>
             </div>
         </div>
