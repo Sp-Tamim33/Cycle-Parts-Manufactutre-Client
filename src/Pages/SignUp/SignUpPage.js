@@ -5,9 +5,9 @@ import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../FirebaseInit/Firerebase.Init';
 import Loading from '../../Components/Loading/Loading';
-
 import { useForm } from "react-hook-form";
 import toast from 'react-hot-toast';
+import useToken from '../../Hooks/useToken';
 
 
 const SignUp = () => {
@@ -22,6 +22,7 @@ const SignUp = () => {
         emailAndPassLoading,
         emailAndPassError,
     ] = useCreateUserWithEmailAndPassword(auth);
+    const [token] = useToken(emailAndPassUser || googleUser);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -43,15 +44,14 @@ const SignUp = () => {
     if (googleLoading || emailAndPassLoading) {
         return <Loading />;
     }
-    if (googleUser || emailAndPassUser) {
-        return <Navigate to='/' replace={true} />
+    if (token) {
+        <Navigate to='/' replace={true} />
     }
 
 
     // Signup Submit 
     const onSubmit = data => {
-        console.log(data)
-        createUserWithEmailAndPassword(data.email, data.password)
+        createUserWithEmailAndPassword(data.email, data.password);
         reset()
         toast.success("Signup Successfully Done !")
     };

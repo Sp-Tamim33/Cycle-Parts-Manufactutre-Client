@@ -7,6 +7,7 @@ import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-fireba
 import auth from '../../FirebaseInit/Firerebase.Init';
 import { useForm } from "react-hook-form";
 import toast from 'react-hot-toast';
+import useToken from '../../Hooks/useToken';
 
 
 
@@ -23,17 +24,18 @@ const SignIn = () => {
         emailAndPassLoading,
         emailAndPassError,
     ] = useSignInWithEmailAndPassword(auth);
+    const [token] = useToken(emailAndPassUser || googleUser);
 
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
 
     useEffect(() => {
-        if (emailAndPassUser || googleUser) {
+        if (token) {
             navigate(from);
             toast.success('account logged !')
         }
-    }, [emailAndPassUser, from, googleUser, navigate]);
+    }, [token, from, navigate]);
 
     // Google login
     if (googleError) {
@@ -46,7 +48,7 @@ const SignIn = () => {
     if (googleLoading || emailAndPassLoading) {
         return <Loading />;
     }
-    if (googleUser || emailAndPassUser) {
+    if (token) {
         return <Navigate to='/' replace={true} />
     }
 
@@ -59,12 +61,6 @@ const SignIn = () => {
     };
 
 
-    if (googleLoading) {
-        return <Loading />;
-    }
-    if (googleUser) {
-        return <Navigate to='/' replace={true} />
-    }
     return (
         <section class="h-screen">
             <div class="px-6 h-full text-white">
