@@ -15,6 +15,7 @@ import RequireAuth from './Components/RequireAuth/RequireAuth';
 import Purchase from './Pages/Purchase/Purchase';
 import DashboardProflie from './Pages/Dashboard/DashboardProflie';
 import DashboardOrders from './Pages/Dashboard/DashboardOrders';
+import AddRivew from './Pages/Dashboard/AddRivew';
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
         <Route path='dashboard' element={<RequireAuth><Dashboard /></RequireAuth>}>
           <Route index element={<DashboardProflie />} />
           <Route path='profile' element={<DashboardProflie />} />
-          <Route path='profile' element={<DashboardProflie />} />
+          <Route path='addrivew' element={<AddRivew />} />
           <Route path='orders' element={<DashboardOrders />} />
         </Route>
         <Route path='purchase/:id' element={

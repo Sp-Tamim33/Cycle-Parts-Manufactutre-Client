@@ -25,6 +25,7 @@ function Navbar() {
     // Sign Out
     const logout = () => {
         signOut(auth);
+        localStorage.removeItem('accessToken')
     };
 
     return (
