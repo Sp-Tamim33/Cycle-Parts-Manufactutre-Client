@@ -13,6 +13,8 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import { Toaster } from 'react-hot-toast';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
 import Purchase from './Pages/Purchase/Purchase';
+import DashboardProflie from './Pages/Dashboard/DashboardProflie';
+import DashboardOrders from './Pages/Dashboard/DashboardOrders';
 
 function App() {
   return (
@@ -27,11 +29,12 @@ function App() {
         <Route path='contact' element={<ContactPage />} />
         <Route path='signin' element={<SignInPage />} />
         <Route path='signup' element={<SignUpPage />} />
-        <Route path='dashboard' element={
-          <RequireAuth>
-            <Dashboard />
-          </RequireAuth>
-        } />
+        <Route path='dashboard' element={<RequireAuth><Dashboard /></RequireAuth>}>
+          <Route index element={<DashboardProflie />} />
+          <Route path='profile' element={<DashboardProflie />} />
+          <Route path='profile' element={<DashboardProflie />} />
+          <Route path='orders' element={<DashboardOrders />} />
+        </Route>
         <Route path='purchase/:id' element={
           <RequireAuth>
             <Purchase />
