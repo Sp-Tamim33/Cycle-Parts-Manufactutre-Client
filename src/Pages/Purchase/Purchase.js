@@ -18,7 +18,6 @@ const Purchase = () => {
 
 
     const { MinimumOrder } = product;
-    console.log(typeof MinimumOrder);
     const [increaseDecrease, setIncreaseDecrease] = useState(0);
     useEffect(() => {
         fetch(`http://localhost:5000/product/${id}`)
@@ -60,7 +59,41 @@ const Purchase = () => {
     };
 
     const ProductName = `Name : ${product.name}`
-    const ProductPrice = `Price : ${product.price}$  -- per pis`
+    const ProductPrice = `Price : ${product.price}$  -- per pis`;
+
+
+
+    const handlePurchaseOrder = (event) => {
+        event.preventDefault();
+        const productName = event.target.productName.value;
+        const name = event.target.name.value;
+        const price = event.target.price.value;
+        const email = event.target.email.value;
+        const number = event.target.number.value;
+        const address = event.target.address.value;
+
+        fetch('http://localhost:5000/orders', {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify({
+                productName,
+                name,
+                email,
+                number,
+                address,
+                price,
+            }),
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data?.insertedId) {
+                    toast.success('Thanks for your Order!');
+                    event.target.reset();
+                }
+            })
+    }
     return (
         <div>
             <section className="py-10 text-white">
@@ -69,7 +102,7 @@ const Purchase = () => {
                         <h1 className="text-center py-5 text-2xl  font-bold">
                             Order information
                         </h1>
-                        <form>
+                        <form onSubmit={handlePurchaseOrder}>
                             <input
                                 value={ProductName}
                                 readOnly
@@ -93,7 +126,7 @@ const Purchase = () => {
                             <input
                                 type="text"
                                 placeholder="Enter Your Name"
-                                className="input mb-3  w-full p-3 rounded border-2 border-orange-500"
+                                className="input mb-3  w-full p-3 rounded border-2 border-orange-500 text-black"
                                 required
                                 name="name"
                             />
@@ -112,17 +145,17 @@ const Purchase = () => {
                                 name="number"
                                 placeholder="Enter Your Number"
                                 required
-                                className="input mb-3  w-full p-3 rounded border-2 border-orange-500"
+                                className="input mb-3  w-full p-3 rounded border-2 border-orange-500 text-black"
                             />
                             <input
                                 type="text"
                                 name="address"
                                 placeholder="Enter Your Address"
-                                className="input mb-3  w-full p-3 rounded border-2 border-orange-500"
+                                className="input mb-3  w-full p-3 rounded border-2 border-orange-500 text-black"
                                 required
                             />
 
-                            <button className=" w-full bg-black text-white font-bold border-2 border-orange-500 hover:bg-orange-500 focus:ring-4 focus:outline-none focus:ring-orange-500 rounded-lg text-xl px-5 py-2.5 mt-5 duration-500 text-center mr-2 mb-2 dark:border-orange-500 hover:text-black  dark:hover:bg-orange-500 dark:focus:ring-orange-500">
+                            <button type='submit' className=" w-full bg-black text-white font-bold border-2 border-orange-500 hover:bg-orange-500 focus:ring-4 focus:outline-none focus:ring-orange-500 rounded-lg text-xl px-5 py-2.5 mt-5 duration-500 text-center mr-2 mb-2 dark:border-orange-500 hover:text-black  dark:hover:bg-orange-500 dark:focus:ring-orange-500">
                                 Complete The Purchase
                             </button>
                         </form>
