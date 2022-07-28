@@ -10,7 +10,7 @@ const Product = ({ product }) => {
     }
     return (
         <div>
-            <div class="card card-compact w-96 bg-base-100 shadow-xl bg-orange-200 m-5 rounded-md product-card">
+            <div class="card card-compact w-96 shadow-xl bg-orange-200 m-5 rounded-md product-card">
                 <figure><img src={img} alt="Cycle Parts" className='rounded-md' /></figure>
                 <div class="card-body py-10 px-5">
                     <h2 class="card-title text-3xl font-semibold text-black">{name}</h2>

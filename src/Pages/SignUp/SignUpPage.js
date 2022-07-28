@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Icon } from '@iconify/react';
 import Signup from '../../assests/img/signup.svg'
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../FirebaseInit/Firerebase.Init';
 import Loading from '../../Components/Loading/Loading';
 import { useForm } from "react-hook-form";
@@ -11,6 +11,7 @@ import useToken from '../../Hooks/useToken';
 
 
 const SignUp = () => {
+    const [updateProfile, updating, error] = useUpdateProfile(auth);
     // google login 
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     // for submit 
@@ -41,7 +42,10 @@ const SignUp = () => {
     if (emailAndPassError) {
         toast.error(emailAndPassError)
     }
-    if (googleLoading || emailAndPassLoading) {
+    if (error) {
+        toast.error(error)
+    }
+    if (googleLoading || emailAndPassLoading || updating) {
         return <Loading />;
     }
     if (token) {
@@ -50,8 +54,9 @@ const SignUp = () => {
 
 
     // Signup Submit 
-    const onSubmit = data => {
-        createUserWithEmailAndPassword(data.email, data.password);
+    const onSubmit = async data => {
+        await createUserWithEmailAndPassword(data.email, data.password);
+        await updateProfile({ displayName: data.firstName })
         reset()
         toast.success("Signup Successfully Done !")
     };

@@ -1,8 +1,51 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import toast from 'react-hot-toast';
 
 const AddRivew = () => {
-    const { register } = useForm();
+    const { register, handleSubmit, reset } = useForm();
+    const imageApiKey = '5d7e95b547e875bb761ad5659e73286a';
+    const onSubmit = data => {
+        const img = data.image[0];
+        const formData = new FormData();
+        formData.append('image', img);
+        const url = `https://api.imgbb.com/1/upload?key=${imageApiKey}`
+        fetch(url, {
+            method: 'POST',
+            body: formData
+        })
+            .then(res => res.json())
+            .then(result => {
+                if (result.success) {
+                    const img = result.data.url;
+                    const review = {
+                        name: data.name,
+                        position: data.position,
+                        rating: data.rating,
+                        img: img,
+                        description: data.description,
+
+                    }
+                    fetch(`http://localhost:5000/reviews`, {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify(review)
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.insertedId) {
+                                toast.success('Thanks for your Review!')
+                            }
+                        })
+                }
+            })
+        reset()
+    }
+
+
+
     return (
         <div>
             <section className="lg:pl-10 pt-10">
@@ -10,7 +53,7 @@ const AddRivew = () => {
                     <h2 className=" pb-10 pt-10 text-xl lg:text-2xl text-orange-500 font-bold">
                         Add Feedback
                     </h2>
-                    <form>
+                    <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="mb-3 ">
                             <div>
                                 <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your Name</label>
@@ -20,6 +63,16 @@ const AddRivew = () => {
                                     className="block p-2.5 w-80 text-sm text-gray-900 bg-gray-50 rounded-lg border border-orange-500 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
                                     placeholder="Enter Name"
                                     {...register("name")}
+                                />
+                            </div>
+                            <div>
+                                <label for="position" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your position</label>
+                                <input
+                                    id='position'
+                                    required
+                                    className="block p-2.5 w-80 text-sm text-gray-900 bg-gray-50 rounded-lg border border-orange-500 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
+                                    placeholder="Enter Name"
+                                    {...register("position")}
                                 />
                             </div>
                             <div>
