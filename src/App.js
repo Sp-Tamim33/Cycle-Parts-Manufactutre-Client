@@ -16,6 +16,7 @@ import Purchase from './Pages/Purchase/Purchase';
 import DashboardProflie from './Pages/Dashboard/DashboardProflie';
 import DashboardOrders from './Pages/Dashboard/DashboardOrders';
 import AddRivew from './Pages/Dashboard/AddRivew';
+import AllUsers from './Pages/Dashboard/AllUsers';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path='profile' element={<DashboardProflie />} />
           <Route path='addrivew' element={<AddRivew />} />
           <Route path='orders' element={<DashboardOrders />} />
+          <Route path='allusers' element={<AllUsers />} />
         </Route>
         <Route path='purchase/:id' element={
           <RequireAuth>
