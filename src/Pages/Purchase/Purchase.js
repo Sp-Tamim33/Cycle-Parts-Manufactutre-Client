@@ -126,7 +126,7 @@ const Purchase = () => {
                             <input
                                 type="text"
                                 placeholder="Enter Your Name"
-                                className="input mb-3  w-full p-3 rounded border-2 border-orange-500 text-black"
+                                className="input mb-3  w-full p-3 rounded border-2 border-orange-500"
                                 required
                                 name="name"
                             />
@@ -145,13 +145,13 @@ const Purchase = () => {
                                 name="number"
                                 placeholder="Enter Your Number"
                                 required
-                                className="input mb-3  w-full p-3 rounded border-2 border-orange-500 text-black"
+                                className="input mb-3  w-full p-3 rounded border-2 border-orange-500"
                             />
                             <input
                                 type="text"
                                 name="address"
                                 placeholder="Enter Your Address"
-                                className="input mb-3  w-full p-3 rounded border-2 border-orange-500 text-black"
+                                className="input mb-3  w-full p-3 rounded border-2 border-orange-500"
                                 required
                             />
 

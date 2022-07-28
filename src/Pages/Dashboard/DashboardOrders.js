@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import toast from 'react-hot-toast';
 import auth from '../../FirebaseInit/Firerebase.Init';
 
 const DashboardOrders = () => {
@@ -13,6 +14,25 @@ const DashboardOrders = () => {
         }
     }, [user])
 
+    const handleDelete = (id) => {
+        const userConfirm = window.confirm('are you sure to delete ?')
+        if (userConfirm) {
+            console.log('deleting id', id);
+            fetch(`http://localhost:5000/orders/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    // console.log(data);
+                    if (data.deletedCount > 0) {
+                        // console.log('deleted');
+                        const remaining = orders.filter(order => order._id !== id);
+                        setOrders(remaining)
+                        toast.success('Delete Item Successfully!')
+                    }
+                })
+        }
+    }
     return (
         <div>
             <p className='text-white text-3xl px-5'>My Orders -- <span className='text-orange-500 font-bold'>{orders.length}</span></p>
@@ -32,6 +52,7 @@ const DashboardOrders = () => {
                         </tr>
                     </thead>
                     <tbody>
+
                         {
                             orders.map((order, index) =>
                                 <tr className='border'>
@@ -39,7 +60,7 @@ const DashboardOrders = () => {
                                     <td className='border pl-3 p-5'>{order.name}</td>
                                     <td className='border pl-3 p-5'>{order.productName}</td>
                                     <td className='border pl-3 p-5'>{order.price}</td>
-                                    <td className='border pl-3 p-5'><button className='bg-orange-500 p-3 rounded-md hover:bg-black border border-orange-500 duration-500'>Delete</button></td>
+                                    <td className='border pl-3 p-5'><button onClick={() => handleDelete(order._id)} className='bg-orange-500 p-3 rounded-md hover:bg-black border border-orange-500 duration-500 cursor-pointer'>Delete</button></td>
                                     <td className='border pl-3 p-5'><button className='bg-orange-500 p-3 rounded-md hover:bg-black border border-orange-500 duration-500'>pay</button></td>
                                     <td className='border pl-3 p-5'>id</td>
                                 </tr>)
@@ -47,7 +68,7 @@ const DashboardOrders = () => {
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div >
     );
 };
 
