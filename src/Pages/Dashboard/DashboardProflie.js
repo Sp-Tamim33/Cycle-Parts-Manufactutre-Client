@@ -16,7 +16,7 @@ const DashboardProflie = () => {
         fetch(`http://localhost:5000/users/${user.email}`)
             .then(res => res.json())
             .then(updatedUser => setUserInfo(updatedUser))
-    }, [user])
+    }, [user, userInfo])
 
 
     if (loading) {
@@ -83,7 +83,7 @@ const DashboardProflie = () => {
                     <ul>
                         <li className="mb-2">
                             <span className="text-xl font-bold">Name:</span>
-                            <span className="ml-5 text-gray-500">{user?.displayName}</span>
+                            <span className="ml-5 text-gray-500">{user?.displayName || userInfo.name}</span>
                         </li>
                         <li className="mb-2">
                             <span className="text-xl font-bold">Email:</span>
