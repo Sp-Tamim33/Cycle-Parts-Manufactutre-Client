@@ -1,17 +1,28 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import userProffile from '../../assests/img/userProfile.jpg';
 import Loading from '../../Components/Loading/Loading';
 import auth from '../../FirebaseInit/Firerebase.Init';
 import { useForm } from "react-hook-form";
+import toast from 'react-hot-toast';
 
 const DashboardProflie = () => {
+    const [userInfo, setUserInfo] = useState([]);
     const [user, loading] = useAuthState(auth);
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/users/${user.email}`)
+            .then(res => res.json())
+            .then(updatedUser => setUserInfo(updatedUser))
+    }, [user])
+
+
     if (loading) {
         return <Loading />
     }
+
 
     const imageApiKey = '5d7e95b547e875bb761ad5659e73286a';
 
@@ -37,7 +48,20 @@ const DashboardProflie = () => {
                         facebook: data.facebook,
                         email: user.email
                     }
-                    console.log(updatedDoc);
+                    fetch(`http://localhost:5000/users/${user.email}`, {
+                        method: 'PUT',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify(updatedDoc)
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data) {
+                                toast.success('your information updated!');
+                                reset()
+                            }
+                        })
                 }
             })
     }
@@ -50,7 +74,7 @@ const DashboardProflie = () => {
                 <div className="avatar online">
                     <div className="w-24 rounded-full">
                         <img
-                            src={userProffile}
+                            src={userInfo.img || userProffile}
                             alt=""
                         />
                     </div>
@@ -68,19 +92,19 @@ const DashboardProflie = () => {
                         <li className="mb-2">
                             <span className="text-xl font-bold">Phone:</span>
                             <span className="ml-5 text-gray-500">
-                                your phone number
+                                {userInfo.phone}
                             </span>
                         </li>
                         <li className="mb-2">
                             <span className="text-xl font-bold">Address:</span>
                             <span className="ml-5 text-gray-500">
-                                your address
+                                {userInfo.address}
                             </span>
                         </li>
                         <li className="mb-2">
                             <span className="text-xl font-bold">Education:</span>
                             <span className="ml-5 text-gray-500">
-                                your education
+                                {userInfo.education}
                             </span>
                         </li>
                     </ul>
@@ -93,13 +117,13 @@ const DashboardProflie = () => {
                         <li className="mb-2">
                             <span className="text-xl font-bold">Linkedin:</span>
                             <span className="ml-5 text-gray-500">
-                                your linkedin
+                                {userInfo.linkedin}
                             </span>
                         </li>
                         <li className="mb-2">
                             <span className="text-xl font-bold">Facebook:</span>
                             <span className="ml-5 text-gray-500">
-                                your facebook
+                                {userInfo.facebook}
                             </span>
                         </li>
                     </ul>
