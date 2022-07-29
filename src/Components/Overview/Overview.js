@@ -19,7 +19,7 @@ const Overview = () => {
             <div className='grid grid-cols-1 md:grid-cols-4'>
                 <OverviewCard icon="bx:world" limit="133" text="Countrys" bigText={CountryText} />
                 <OverviewCard icon="fa:industry" limit="2765" text="Company" bigText={CompanyText} />
-                <OverviewCard icon="fluent:person-feedback-16-filled" limit="1200" text="Positive Feedback" bigText={FeedbackText} />
+                <OverviewCard icon="fluent:person-feedback-16-filled" limit="1200" text="Feedback" bigText={FeedbackText} />
                 <OverviewCard icon="entypo:emoji-happy" limit="3000" text="Happy Clients" bigText={ClientsText} />
             </div>
         </div>

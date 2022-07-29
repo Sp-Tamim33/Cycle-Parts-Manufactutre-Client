@@ -14,7 +14,7 @@ const Testimonials = () => {
             <Heading text="What Say Our Clients About Us !" />
             <div className='py-24 grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto'>
                 {
-                    reviews.map(review => <Testimonial key={review._id} name={review.name} position={review.position} img={review.img} description={review.description} />)
+                    [...reviews].reverse().slice(0, 3).map(review => <Testimonial key={review._id} name={review.name} position={review.position} img={review.img} description={review.description} />)
                 }
             </div>
         </div>
