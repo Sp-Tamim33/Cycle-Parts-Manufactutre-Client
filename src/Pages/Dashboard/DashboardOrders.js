@@ -71,7 +71,7 @@ const DashboardOrders = () => {
 
                         {
                             orders.map((order, index) =>
-                                <tr className='border'>
+                                <tr key={order._id} className='border'>
                                     <th className='border pl-3 p-5'>{index + 1}</th>
                                     <td className='border pl-3 p-5'>{order.name}</td>
                                     <td className='border pl-3 p-5'>{order.productName}</td>

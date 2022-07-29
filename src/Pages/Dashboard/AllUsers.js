@@ -1,20 +1,26 @@
 import React, { useEffect, useState } from 'react';
+import UserRow from './UserRow';
 
 const AllUsers = () => {
     const [users, setUsers] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('http://localhost:5000/users', {
+            method: 'GET',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
             .then(res => res.json())
             .then(data => setUsers(data))
     }, [])
     return (
         <div>
-            <h1 className="text-white text-2xl px-3 font-semibold">User Limit = <span className='text-orange-500'>{users.length}</span></h1>
+            <h1 className="text-white text-2xl py-5 px-3 font-semibold">User Limit = <span className='text-orange-500'>{users.length}</span></h1>
             <div class="overflow-x-auto">
                 <table class="table w-full">
                     <thead>
                         <tr>
-                            <th></th>
+                            <th>Length</th>
                             <th>Email</th>
                             <th>Name</th>
                             <th>Favorite Color</th>
@@ -22,13 +28,7 @@ const AllUsers = () => {
                     </thead>
                     <tbody>
                         {
-                            users.map((user, index) =>
-                                <tr>
-                                    <th>{index + 1}</th>
-                                    <td>{user.email}</td>
-                                    <td>{user.name}</td>
-                                    <td>Make Admin</td>
-                                </tr>)
+                            users.map((user, index) => <UserRow key={user._id} user={user} index={index} />)
                         }
                     </tbody>
                 </table>

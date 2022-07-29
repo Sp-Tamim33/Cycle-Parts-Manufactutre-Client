@@ -49,13 +49,12 @@ const SignIn = () => {
         return <Loading />;
     }
     if (token) {
-        return <Navigate to='/' replace={true} />
+        return <Navigate to='/dashboard/profile' replace={true} />
     }
 
 
     // Signup Submit 
     const onSubmit = data => {
-        console.log(data)
         signInWithEmailAndPassword(data.email, data.password)
         reset()
     };

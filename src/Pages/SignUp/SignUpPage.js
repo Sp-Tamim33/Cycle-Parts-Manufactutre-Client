@@ -49,7 +49,7 @@ const SignUp = () => {
         return <Loading />;
     }
     if (token) {
-        <Navigate to='/' replace={true} />
+        <Navigate to='/dashboard/profile' replace={true} />
     }
 
 
