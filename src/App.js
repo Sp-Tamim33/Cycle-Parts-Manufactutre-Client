@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Navbar from './Components/Navbar/Navbar';
 import ContactPage from './Pages/Contact/ContactPage';
 import HomePage from './Pages/Home/HomePage';
 import PortfolioPage from './Pages/Portfolio/PortfolioPage';
@@ -19,11 +18,12 @@ import DashboardOrders from './Pages/Dashboard/DashboardOrders';
 import AddRivew from './Pages/Dashboard/AddRivew';
 import AllUsers from './Pages/Dashboard/AllUsers';
 import AddProduct from './Pages/Dashboard/AddProduct';
+import Header from './Components/Header/Header'
 
 function App() {
   return (
     <div>
-      <Navbar />
+      <Header />
       <Toaster />
       <Routes>
         <Route path='/' element={<HomePage />} />
