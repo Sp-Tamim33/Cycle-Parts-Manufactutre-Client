@@ -18,18 +18,22 @@ const DashboardHeader = () => {
                     >
                         <Icon icon="gg:profile" />  My Profile
                     </ActiveLink>
-                    <ActiveLink
-                        to="orders"
-                        className={`text-white my-3 border border-orange-500 hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold mx-3 flex justify-center items-center   `}
-                    >
-                        <Icon icon="carbon:ibm-watson-orders" /> My Orders
-                    </ActiveLink>
-                    <ActiveLink
-                        to="addrivew"
-                        className={`text-white my-3 border border-orange-500 hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold mx-3 flex justify-center items-center`}
-                    >
-                        <Icon icon="carbon:review" /> Add a Review
-                    </ActiveLink>
+                    {
+                        !admin && <ActiveLink
+                            to="orders"
+                            className={`text-white my-3 border border-orange-500 hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold mx-3 flex justify-center items-center   `}
+                        >
+                            <Icon icon="carbon:ibm-watson-orders" /> My Orders
+                        </ActiveLink>
+                    }
+                    {
+                        !admin && <ActiveLink
+                            to="addrivew"
+                            className={`text-white my-3 border border-orange-500 hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold mx-3 flex justify-center items-center`}
+                        >
+                            <Icon icon="carbon:review" /> Add a Review
+                        </ActiveLink>
+                    }
                     {
                         admin && <ActiveLink
                             to="allusers"
@@ -44,6 +48,14 @@ const DashboardHeader = () => {
                             className={`text-white my-3 border border-orange-500 hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold mx-3 flex justify-center items-center`}
                         >
                             <Icon icon="fluent:tray-item-remove-24-filled" /> Add Product*
+                        </ActiveLink>
+                    }
+                    {
+                        admin && <ActiveLink
+                            to="addblog"
+                            className={`text-white my-3 border border-orange-500 hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold mx-3 flex justify-center items-center`}
+                        >
+                            <Icon icon="cib:micro-blog" /> Add Blog*
                         </ActiveLink>
                     }
                 </nav>

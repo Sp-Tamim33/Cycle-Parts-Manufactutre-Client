@@ -54,6 +54,12 @@ const Header = () => {
                                             >
                                                 Products
                                             </ActiveLink>
+                                            <ActiveLink
+                                                to="/blog"
+                                                className={`text-white hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold mx-3`}
+                                            >
+                                                Blog
+                                            </ActiveLink>
 
                                             <ActiveLink
                                                 to="/contact"
@@ -177,6 +183,12 @@ const Header = () => {
                                         className="block text-white px-3 py-2 rounded-md text-base font-medium"
                                     >
                                         Products
+                                    </ActiveLink>
+                                    <ActiveLink
+                                        to="/blog"
+                                        className="block text-white px-3 py-2 rounded-md text-base font-medium"
+                                    >
+                                        Blog
                                     </ActiveLink>
 
                                     <ActiveLink

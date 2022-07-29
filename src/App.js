@@ -19,6 +19,8 @@ import AddRivew from './Pages/Dashboard/AddRivew';
 import AllUsers from './Pages/Dashboard/AllUsers';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import Header from './Components/Header/Header'
+import Blog from './Pages/Blog/Blog';
+import AddBlog from './Pages/Dashboard/AddBlog';
 
 function App() {
   return (
@@ -30,6 +32,7 @@ function App() {
         <Route path='home' element={<HomePage />} />
         <Route path='portfolio' element={<PortfolioPage />} />
         <Route path='products' element={<ProductPage />} />
+        <Route path='blog' element={<Blog />} />
         <Route path='contact' element={<ContactPage />} />
         <Route path='signin' element={<SignInPage />} />
         <Route path='signup' element={<SignUpPage />} />
@@ -40,6 +43,7 @@ function App() {
           <Route path='orders' element={<DashboardOrders />} />
           <Route path='allusers' element={<RequireAdmin><AllUsers /></RequireAdmin>} />
           <Route path='addproduct' element={<RequireAdmin><AddProduct /></RequireAdmin>} />
+          <Route path='addblog' element={<RequireAdmin><AddBlog /></RequireAdmin>} />
         </Route>
         <Route path='purchase/:id' element={
           <RequireAuth>
