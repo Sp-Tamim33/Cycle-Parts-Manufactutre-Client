@@ -18,9 +18,10 @@ import DashboardOrders from './Pages/Dashboard/DashboardOrders';
 import AddRivew from './Pages/Dashboard/AddRivew';
 import AllUsers from './Pages/Dashboard/AllUsers';
 import AddProduct from './Pages/Dashboard/AddProduct';
-import Header from './Components/Header/Header'
-import Blog from './Pages/Blog/Blog';
+import Header from './Components/Header/Header';
 import AddBlog from './Pages/Dashboard/AddBlog';
+import Blogs from './Pages/Blog/Blogs';
+import SingleBlog from './Pages/Blog/SingleBlog';
 
 function App() {
   return (
@@ -32,7 +33,8 @@ function App() {
         <Route path='home' element={<HomePage />} />
         <Route path='portfolio' element={<PortfolioPage />} />
         <Route path='products' element={<ProductPage />} />
-        <Route path='blog' element={<Blog />} />
+        <Route path='blog' element={<Blogs />} />
+        <Route path='blog/:id' element={<SingleBlog />} />
         <Route path='contact' element={<ContactPage />} />
         <Route path='signin' element={<SignInPage />} />
         <Route path='signup' element={<SignUpPage />} />
