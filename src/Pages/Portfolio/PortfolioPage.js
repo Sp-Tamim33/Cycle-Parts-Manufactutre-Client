@@ -47,7 +47,7 @@ const Portfolio = () => {
                     {/* About */}
                     <div>
                         <h1 className='text-white fotn-semibold text-xl'>About Me :</h1>
-                        <p className='text-white py-2 px-10'>I’m SP TAMIM, a Student and MERN Developer with 3 years of experience. Last 1.5 years, I have learned many Languages, Tools 	&#38; Technologies. I have completed 55+ small projects recently and have 1.5 years of Coding Experience with Bug Fixing I loves to create web application using ReactJS ! Building simple website using HTML, CSS, JavaScript.Creating simple APIs by NodeJS and ExpressJS with MongoDB as database.</p>
+                        <p className='text-white py-2 md:px-10'>I’m SP TAMIM, a Student and MERN Developer with 3 years of experience. Last 1.5 years, I have learned many Languages, Tools 	&#38; Technologies. I have completed 55+ small projects recently and have 1.5 years of Coding Experience with Bug Fixing I loves to create web application using ReactJS ! Building simple website using HTML, CSS, JavaScript.Creating simple APIs by NodeJS and ExpressJS with MongoDB as database.</p>
 
 
                         <h1 className='text-white fotn-semibold text-xl mt-10'>My Skills :</h1>

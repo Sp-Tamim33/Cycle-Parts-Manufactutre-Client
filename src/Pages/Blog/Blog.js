@@ -8,7 +8,7 @@ const Blog = ({ blog }) => {
     }
     return (
         <div>
-            <div class="card w-96 bg-base-100 shadow-xl my-3">
+            <div class="card px-10 mx-10 bg-base-100 shadow-xl my-3">
                 <figure class="px-10 pt-10">
                     <img src={blog.img} alt="blog_img" class="rounded-xl" />
                 </figure>
