@@ -12,7 +12,7 @@ const Payment = () => {
     const [product, setProduct] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders/${id}`)
+        fetch(`https://ancient-citadel-87050.herokuapp.com/orders/${id}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [id])

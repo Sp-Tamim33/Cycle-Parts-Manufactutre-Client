@@ -26,7 +26,7 @@ const AddProduct = () => {
                         MinimumOrder: data.minimumOrder,
                         available: data.available
                     }
-                    fetch('http://localhost:5000/products', {
+                    fetch('https://ancient-citadel-87050.herokuapp.com/products', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

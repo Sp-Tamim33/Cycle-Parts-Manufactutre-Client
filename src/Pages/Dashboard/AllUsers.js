@@ -4,7 +4,7 @@ import UserRow from './UserRow';
 const AllUsers = () => {
     const [users, setUsers] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/users', {
+        fetch('https://ancient-citadel-87050.herokuapp.com/users', {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

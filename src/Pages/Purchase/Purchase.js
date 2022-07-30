@@ -20,7 +20,7 @@ const Purchase = () => {
     const { MinimumOrder } = product;
     const [increaseDecrease, setIncreaseDecrease] = useState(0);
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${id}`)
+        fetch(`https://ancient-citadel-87050.herokuapp.com/product/${id}`)
             .then(res => res.json())
             .then(data => {
                 setProduct(data)
@@ -72,7 +72,7 @@ const Purchase = () => {
         const number = event.target.number.value;
         const address = event.target.address.value;
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://ancient-citadel-87050.herokuapp.com/orders', {
             method: "POST",
             headers: {
                 "Content-type": "application/json"

@@ -13,7 +13,7 @@ const DashboardProflie = () => {
     const { register, handleSubmit, reset } = useForm();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://ancient-citadel-87050.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(updatedUser => setUserInfo(updatedUser))
     }, [user, userInfo])
@@ -48,7 +48,7 @@ const DashboardProflie = () => {
                         facebook: data.facebook,
                         email: user.email
                     }
-                    fetch(`http://localhost:5000/users/${user.email}`, {
+                    fetch(`https://ancient-citadel-87050.herokuapp.com/users/${user.email}`, {
                         method: 'PUT',
                         headers: {
                             'content-type': 'application/json'

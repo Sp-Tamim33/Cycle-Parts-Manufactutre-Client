@@ -8,7 +8,7 @@ const ManageProducts = () => {
     const handleDelete = (id) => {
         const userConfirm = window.confirm('are you sure to delete ?')
         if (userConfirm) {
-            fetch(`http://localhost:5000/product/${id}`, {
+            fetch(`https://ancient-citadel-87050.herokuapp.com/product/${id}`, {
                 method: 'DELETE',
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`

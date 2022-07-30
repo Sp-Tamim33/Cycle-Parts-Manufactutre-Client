@@ -24,7 +24,7 @@ const AddBlog = () => {
                         question: data.question,
                         description: data.description
                     }
-                    fetch('http://localhost:5000/blogs', {
+                    fetch('https://ancient-citadel-87050.herokuapp.com/blogs', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

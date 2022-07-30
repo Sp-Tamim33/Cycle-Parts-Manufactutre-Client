@@ -11,7 +11,7 @@ const DashboardOrders = () => {
     const navigate = useNavigate();
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/orders?email=${user.email}`, {
+            fetch(`https://ancient-citadel-87050.herokuapp.com/orders?email=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -34,7 +34,7 @@ const DashboardOrders = () => {
         const userConfirm = window.confirm('are you sure to delete ?')
         if (userConfirm) {
             console.log('deleting id', id);
-            fetch(`http://localhost:5000/orders/${id}`, {
+            fetch(`https://ancient-citadel-87050.herokuapp.com/orders/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
