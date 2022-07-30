@@ -23,6 +23,7 @@ import AddBlog from './Pages/Dashboard/AddBlog';
 import Blogs from './Pages/Blog/Blogs';
 import SingleBlog from './Pages/Blog/SingleBlog';
 import Payment from './Pages/Dashboard/Payment';
+import ManageProducts from './Pages/Dashboard/ManageProducts';
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
           <Route path='allusers' element={<RequireAdmin><AllUsers /></RequireAdmin>} />
           <Route path='addproduct' element={<RequireAdmin><AddProduct /></RequireAdmin>} />
           <Route path='addblog' element={<RequireAdmin><AddBlog /></RequireAdmin>} />
+          <Route path='manageproducts' element={<RequireAdmin><ManageProducts /></RequireAdmin>} />
         </Route>
         <Route path='purchase/:id' element={
           <RequireAuth>

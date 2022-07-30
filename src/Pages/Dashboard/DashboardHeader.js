@@ -58,6 +58,14 @@ const DashboardHeader = () => {
                             <Icon icon="cib:micro-blog" /> Add Blog*
                         </ActiveLink>
                     }
+                    {
+                        admin && <ActiveLink
+                            to="manageproducts"
+                            className={`text-white my-3 border border-orange-500 hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold mx-3 flex justify-center items-center`}
+                        >
+                            <Icon icon="cib:micro-blog" /> Manage Products
+                        </ActiveLink>
+                    }
                 </nav>
             </div>
         </header>
