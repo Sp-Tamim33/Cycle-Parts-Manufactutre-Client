@@ -58,8 +58,8 @@ const Purchase = () => {
         }
     };
 
-    const ProductName = `Name : ${product.name}`
-    const ProductPrice = `Price : ${product.price}$  -- per pis`;
+    const ProductName = product.name;
+    const ProductPrice = product.price
 
 
 

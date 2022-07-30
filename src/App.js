@@ -22,6 +22,7 @@ import Header from './Components/Header/Header';
 import AddBlog from './Pages/Dashboard/AddBlog';
 import Blogs from './Pages/Blog/Blogs';
 import SingleBlog from './Pages/Blog/SingleBlog';
+import Payment from './Pages/Dashboard/Payment';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
           <Route path='profile' element={<DashboardProflie />} />
           <Route path='addrivew' element={<AddRivew />} />
           <Route path='orders' element={<DashboardOrders />} />
+          <Route path='orders/order/:id' element={<Payment />} />
           <Route path='allusers' element={<RequireAdmin><AllUsers /></RequireAdmin>} />
           <Route path='addproduct' element={<RequireAdmin><AddProduct /></RequireAdmin>} />
           <Route path='addblog' element={<RequireAdmin><AddBlog /></RequireAdmin>} />

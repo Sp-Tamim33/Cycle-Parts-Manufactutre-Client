@@ -2,7 +2,7 @@ import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import auth from '../../FirebaseInit/Firerebase.Init';
 
 const DashboardOrders = () => {
@@ -49,6 +49,8 @@ const DashboardOrders = () => {
                 })
         }
     }
+
+
     return (
         <div>
             <p className='text-white text-3xl px-5'>My Orders -- <span className='text-orange-500 font-bold'>{orders.length}</span></p>
@@ -77,7 +79,7 @@ const DashboardOrders = () => {
                                     <td className='border pl-3 p-5'>{order.productName}</td>
                                     <td className='border pl-3 p-5'>{order.price}</td>
                                     <td className='border pl-3 p-5'><button onClick={() => handleDelete(order._id)} className='bg-orange-500 p-3 rounded-md hover:bg-black border border-orange-500 duration-500 cursor-pointer'>Delete</button></td>
-                                    <td className='border pl-3 p-5'><button className='bg-orange-500 p-3 rounded-md hover:bg-black border border-orange-500 duration-500'>pay</button></td>
+                                    <td className='border pl-3 p-5'><Link to={`order/${order._id}`} className='bg-orange-500 p-3 rounded-md hover:bg-black border border-orange-500 duration-500'>pay</Link></td>
                                     <td className='border pl-3 p-5'>id</td>
                                 </tr>)
                         }
