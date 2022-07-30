@@ -11,7 +11,7 @@ const ProductPage = () => {
 
             <div className='grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto py-20'>
                 {
-                    products.map(product => <Product key={product._id} product={product} />)
+                    products.slice(0, 6).map(product => <Product key={product._id} product={product} />)
                 }
             </div>
         </div>
