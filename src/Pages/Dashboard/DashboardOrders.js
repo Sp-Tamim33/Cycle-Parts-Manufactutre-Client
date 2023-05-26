@@ -55,8 +55,8 @@ const DashboardOrders = () => {
         <div>
             <p className='text-white text-3xl px-5'>My Orders -- <span className='text-orange-500 font-bold'>{orders.length}</span></p>
 
-            <div class="overflow-x-auto py-10">
-                <table class="table w-full">
+            <div className="overflow-x-auto py-10">
+                <table className="table w-full">
                     {/* <!-- head --> */}
                     <thead>
                         <tr className='border text-left'>

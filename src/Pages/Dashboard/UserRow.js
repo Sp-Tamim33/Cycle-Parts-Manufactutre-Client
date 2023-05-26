@@ -30,7 +30,7 @@ const UserRow = ({ user, index }) => {
             <th>{index + 1}</th>
             <td>{user.email}</td>
             <td>{user.name}</td>
-            <td>{user.role !== 'admin' && <button onClick={makeAdmin} class="btn btn-xs">Make Admin</button>}</td>
+            <td>{user.role !== 'admin' && <button onClick={makeAdmin} className="btn btn-xs">Make Admin</button>}</td>
         </tr>
     );
 };

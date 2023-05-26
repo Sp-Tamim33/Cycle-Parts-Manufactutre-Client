@@ -53,7 +53,7 @@ const AddProduct = () => {
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="mb-3 ">
                             <div>
-                                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Product Name</label>
+                                <label for="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Product Name</label>
                                 <input
                                     id='name'
                                     required
@@ -64,18 +64,18 @@ const AddProduct = () => {
                             </div>
                             <div className="mb-3 ">
 
-                                <label for="file_input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Product Photo</label>
-                                <input {...register("image")} required class="block p-2.5 w-80 text-sm text-gray-900 bg-gray-50 rounded-lg border border-orange-500 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500" id="file_input" type="file" />
+                                <label for="file_input" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Product Photo</label>
+                                <input {...register("image")} required className="block p-2.5 w-80 text-sm text-gray-900 bg-gray-50 rounded-lg border border-orange-500 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500" id="file_input" type="file" />
                             </div>
                             <div>
-                                <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Product Description</label>
-                                <textarea {...register("description")} required id="message" rows="4" class="block p-2.5 w-80 text-sm text-gray-900 bg-gray-50 rounded-lg border border-orange-500 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500" placeholder="Product Description"></textarea>
+                                <label for="description" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Product Description</label>
+                                <textarea {...register("description")} required id="message" rows="4" className="block p-2.5 w-80 text-sm text-gray-900 bg-gray-50 rounded-lg border border-orange-500 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500" placeholder="Product Description"></textarea>
                             </div>
                         </div>
 
 
                         <div className='py-2'>
-                            <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Product Price</label>
+                            <label for="price" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Product Price</label>
                             <input
                                 id='price'
                                 required
@@ -85,7 +85,7 @@ const AddProduct = () => {
                             />
                         </div>
                         <div className='py-2'>
-                            <label for="minimumOrder" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Minimum Order</label>
+                            <label for="minimumOrder" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Minimum Order</label>
                             <input
                                 id='minimumOrder'
                                 required
@@ -95,7 +95,7 @@ const AddProduct = () => {
                             />
                         </div>
                         <div className='py-2'>
-                            <label for="available" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Available Product</label>
+                            <label for="available" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Available Product</label>
                             <input
                                 id='available'
                                 required

@@ -16,8 +16,8 @@ const AllUsers = () => {
     return (
         <div>
             <h1 className="text-white text-2xl py-5 px-3 font-semibold">User Limit = <span className='text-orange-500'>{users.length}</span></h1>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th>Length</th>

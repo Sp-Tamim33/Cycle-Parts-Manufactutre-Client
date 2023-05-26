@@ -2,9 +2,13 @@ import React from 'react';
 import Heading from '../../Components/Heading/Heading';
 import useProducts from '../../Hooks/useProducts';
 import Product from '../../Components/Products/Product'
+import Loading from '../../Components/Loading/Loading';
 
 const ProductPage = () => {
-    const [products] = useProducts();
+    const [products, loading] = useProducts();
+    if (loading) {
+        return <Loading />
+    }
     return (
         <div>
             <Heading text="Our Latest Product" />

@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Blog from './Blog';
+import Loading from '../../Components/Loading/Loading';
 
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
         fetch('https://cycle-tools-server-production.up.railway.app/blogs', {
             method: 'GET',
@@ -11,8 +13,14 @@ const Blogs = () => {
             }
         })
             .then(res => res.json())
-            .then(data => setBlogs(data))
+            .then(data => {
+                setBlogs(data)
+                setLoading(false)
+            })
     }, [])
+    if (loading) {
+        return <Loading />
+    }
     return (
         <div>
             <div className='grid grid-cols-1 md:grid-cols-3 px-10'>

@@ -143,43 +143,43 @@ const DashboardProflie = () => {
             {/* <!-- The button to open modal --> */}
 
             {/* <!-- Put this part before </body> tag --> */}
-            <input type="checkbox" id="my-modal-3" class="modal-toggle" />
-            <div class="modal">
-                <div class="modal-box relative">
-                    <label for="my-modal-3" class="btn bg-orange-500 text-black hover:bg-orange-500 hover:text-black btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h3 class="text-lg font-bold py-4">Update Your Profile !</h3>
-                    <form onSubmit={handleSubmit(onSubmit)} class="form-control w-full max-w-xs">
+            <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+            <div className="modal">
+                <div className="modal-box relative">
+                    <label for="my-modal-3" className="btn bg-orange-500 text-black hover:bg-orange-500 hover:text-black btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <h3 className="text-lg font-bold py-4">Update Your Profile !</h3>
+                    <form onSubmit={handleSubmit(onSubmit)} className="form-control w-full max-w-xs">
                         {/* photo  */}
                         <div className='py-2'>
                             <label htmlFor="">picture</label>
-                            <input required name='photo' type="file" class="input input-bordered w-full max-w-xs" {...register("image")} />
+                            <input required name='photo' type="file" className="input input-bordered w-full max-w-xs" {...register("image")} />
                         </div>
                         {/* name  */}
                         <div className='py-2'>
-                            <input {...register("name")} required name='name' type="text" placeholder="your name*" class="input input-bordered w-full max-w-xs" />
+                            <input {...register("name")} required name='name' type="text" placeholder="your name*" className="input input-bordered w-full max-w-xs" />
                         </div>
                         {/* phone  */}
                         <div className='py-2'>
-                            <input required name='phone' type="text" placeholder="your phone*" class="input input-bordered w-full max-w-xs" {...register("phone")} />
+                            <input required name='phone' type="text" placeholder="your phone*" className="input input-bordered w-full max-w-xs" {...register("phone")} />
                         </div>
                         {/* address  */}
                         <div className='py-2'>
-                            <input required {...register("address")} name='address' type="text" placeholder="your address*" class="input input-bordered w-full max-w-xs" />
+                            <input required {...register("address")} name='address' type="text" placeholder="your address*" className="input input-bordered w-full max-w-xs" />
                         </div>
                         {/* education  */}
                         <div className='py-2'>
-                            <input required {...register("education")} name='education' type="text" placeholder="your education*" class="input input-bordered w-full max-w-xs" />
+                            <input required {...register("education")} name='education' type="text" placeholder="your education*" className="input input-bordered w-full max-w-xs" />
                         </div>
                         {/* linkedin  */}
                         <div className='py-2'>
-                            <input required {...register("linkedin")} name='linkedin' type="text" placeholder="linkedin*" class="input input-bordered w-full max-w-xs" />
+                            <input required {...register("linkedin")} name='linkedin' type="text" placeholder="linkedin*" className="input input-bordered w-full max-w-xs" />
                         </div>
                         {/* education  */}
                         <div className='py-2'>
-                            <input required {...register("facebook")} name='facebook' type="text" placeholder="facebook*" class="input input-bordered w-full max-w-xs" />
+                            <input required {...register("facebook")} name='facebook' type="text" placeholder="facebook*" className="input input-bordered w-full max-w-xs" />
                         </div>
 
-                        <div class="modal-action">
+                        <div className="modal-action">
                             <button type='submit' for="my-modal-3" className="text-white hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold mx-3 border-2 border-orange-500 cursor-pointer ml-[-40px]">update</button>
                         </div>
                     </form>

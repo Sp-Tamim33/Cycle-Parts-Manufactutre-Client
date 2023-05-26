@@ -18,10 +18,10 @@ const Payment = () => {
     }, [id])
     return (
         <div className='flex justify-center items-center py-10'>
-            <div class="card w-96 bg-base-100 shadow-xl">
-                <div class="card-body">
-                    <h2 class="card-title">Hello <span className='text-orange-500 font-bold'>{product.name}</span></h2>
-                    <h2 class="card-title">Pay For <span className='text-orange-500 font-bold'>{product.productName}</span></h2>
+            <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card-body">
+                    <h2 className="card-title">Hello <span className='text-orange-500 font-bold'>{product.name}</span></h2>
+                    <h2 className="card-title">Pay For <span className='text-orange-500 font-bold'>{product.productName}</span></h2>
                     <p>Please pay : <span className='text-orange-500 font-bold'>{product.price}</span>$</p>
                     <Elements stripe={stripePromise}>
                         <CheckoutForm product={product} />

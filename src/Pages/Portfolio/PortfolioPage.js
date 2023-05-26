@@ -16,28 +16,28 @@ const Portfolio = () => {
                     <p className='text-sm font-sans font-semibold text-orange-500 text-center py-2'>sp.tam11m@gmail.com</p>
                     <a href="https://sptamim.web.app/" className='block underline text-sm font-sans font-semibold text-blue-500 text-center py-2'>Personal Portfolio</a>
                     <div className='max-w-sm mx-auto'>
-                        <ul class="flex flex-wrap items-center mt-5 text-sm sm:mb-0">
+                        <ul className="flex flex-wrap items-center mt-5 text-sm sm:mb-0">
                             <li className='px-5 text-3xl'>
-                                <a href="https://www.facebook.com/spt4m1m" target={blank} class="mr-4 md:mr-2 text-blue-500">
+                                <a href="https://www.facebook.com/spt4m1m" target={blank} className="mr-4 md:mr-2 text-blue-500">
                                     <Icon icon="il:facebook" /></a>
                             </li>
                             <li className='px-5 text-3xl'>
-                                <a href="https://www.instagram.com/spt4m1m/" target={blank} class="mr-4 text-black md:mr-2">
+                                <a href="https://www.instagram.com/spt4m1m/" target={blank} className="mr-4 text-black md:mr-2">
                                     <div className='instagram'>
                                         <Icon icon="ant-design:instagram-filled" />
                                     </div>
                                 </a>
                             </li>
                             <li className='px-5 text-3xl'>
-                                <a href="https://twitter.com/spt4m1m" target={blank} class="mr-4 text-[#00b9ff] md:mr-6 ">
+                                <a href="https://twitter.com/spt4m1m" target={blank} className="mr-4 text-[#00b9ff] md:mr-6 ">
                                     <Icon icon="akar-icons:twitter-fill" /></a>
                             </li>
                             <li className='px-5 text-3xl'>
-                                <a href="https://github.com/spt4m1m" target={blank} class="mr-4 text-orange-500 md:mr-6 ">
+                                <a href="https://github.com/spt4m1m" target={blank} className="mr-4 text-orange-500 md:mr-6 ">
                                     <Icon icon="akar-icons:github-fill" /></a>
                             </li>
                             <li className='px-5 text-3xl'>
-                                <a href="https://www.linkedin.com/in/spt4m11m/" target={blank} class="mr-4 text-blue-500 md:mr-6 "><Icon icon="akar-icons:linkedin-box-fill" /></a>
+                                <a href="https://www.linkedin.com/in/spt4m11m/" target={blank} className="mr-4 text-blue-500 md:mr-6 "><Icon icon="akar-icons:linkedin-box-fill" /></a>
                             </li>
                         </ul>
                     </div>
@@ -52,48 +52,48 @@ const Portfolio = () => {
 
                         <h1 className='text-white fotn-semibold text-xl mt-10'>My Skills :</h1>
                         <p className='text-white px-10 py-2'>HTML
-                            <div class="w-[200px] md:w-[500px] bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
-                                <div class="bg-orange-500 h-2.5 rounded-full" style={{ width: "95%" }}></div>
+                            <div className="w-[200px] md:w-[500px] bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
+                                <div className="bg-orange-500 h-2.5 rounded-full" style={{ width: "95%" }}></div>
                             </div>
                         </p>
                         <p className='text-white px-10 py-2'>CSS
-                            <div class="w-[200px] md:w-[500px] bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
-                                <div class="bg-orange-500 h-2.5 rounded-full" style={{ width: "90%" }}></div>
+                            <div className="w-[200px] md:w-[500px] bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
+                                <div className="bg-orange-500 h-2.5 rounded-full" style={{ width: "90%" }}></div>
                             </div>
                         </p>
                         <p className='text-white px-10 py-2'>Bootstrap
-                            <div class="w-[200px] md:w-[500px] bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
-                                <div class="bg-orange-500 h-2.5 rounded-full" style={{ width: "95%" }}></div>
+                            <div className="w-[200px] md:w-[500px] bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
+                                <div className="bg-orange-500 h-2.5 rounded-full" style={{ width: "95%" }}></div>
                             </div>
                         </p>
                         <p className='text-white px-10 py-2'>Tailwind
-                            <div class="w-[200px] md:w-[500px] bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
-                                <div class="bg-orange-500 h-2.5 rounded-full" style={{ width: "95%" }}></div>
+                            <div className="w-[200px] md:w-[500px] bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
+                                <div className="bg-orange-500 h-2.5 rounded-full" style={{ width: "95%" }}></div>
                             </div>
                         </p>
                         <p className='text-white px-10 py-2'>JS
-                            <div class="w-[200px] md:w-[500px] bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
-                                <div class="bg-orange-500 h-2.5 rounded-full" style={{ width: "80%" }}></div>
+                            <div className="w-[200px] md:w-[500px] bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
+                                <div className="bg-orange-500 h-2.5 rounded-full" style={{ width: "80%" }}></div>
                             </div>
                         </p>
                         <p className='text-white px-10 py-2'>React JS
-                            <div class="w-[200px] md:w-[500px] bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
-                                <div class="bg-orange-500 h-2.5 rounded-full" style={{ width: "85%" }}></div>
+                            <div className="w-[200px] md:w-[500px] bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
+                                <div className="bg-orange-500 h-2.5 rounded-full" style={{ width: "85%" }}></div>
                             </div>
                         </p>
                         <p className='text-white px-10 py-2'>Node JS (backend)
-                            <div class="w-[200px] md:w-[500px] bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
-                                <div class="bg-orange-500 h-2.5 rounded-full" style={{ width: "60%" }}></div>
+                            <div className="w-[200px] md:w-[500px] bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
+                                <div className="bg-orange-500 h-2.5 rounded-full" style={{ width: "60%" }}></div>
                             </div>
                         </p>
                         <p className='text-white px-10 py-2'>Express JS
-                            <div class="w-[200px] md:w-[500px] bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
-                                <div class="bg-orange-500 h-2.5 rounded-full" style={{ width: "60%" }}></div>
+                            <div className="w-[200px] md:w-[500px] bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
+                                <div className="bg-orange-500 h-2.5 rounded-full" style={{ width: "60%" }}></div>
                             </div>
                         </p>
                         <p className='text-white px-10 py-2'>Mongodb (database)
-                            <div class="w-[200px] md:w-[500px] bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
-                                <div class="bg-orange-500 h-2.5 rounded-full" style={{ width: "60%" }}></div>
+                            <div className="w-[200px] md:w-[500px] bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
+                                <div className="bg-orange-500 h-2.5 rounded-full" style={{ width: "60%" }}></div>
                             </div>
                         </p>
                     </div>

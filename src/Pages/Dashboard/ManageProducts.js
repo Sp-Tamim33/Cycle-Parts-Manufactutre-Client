@@ -29,8 +29,8 @@ const ManageProducts = () => {
     return (
         <div>
             <h1 className="text-white text-3xl px-3 my-3">Manage All Products</h1>
-            <div class="overflow-x-auto py-10">
-                <table class="table w-full">
+            <div className="overflow-x-auto py-10">
+                <table className="table w-full">
                     {/* <!-- head --> */}
                     <thead>
                         <tr className='border text-left'>

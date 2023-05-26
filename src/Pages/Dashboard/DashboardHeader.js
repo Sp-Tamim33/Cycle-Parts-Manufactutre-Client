@@ -9,9 +9,9 @@ const DashboardHeader = () => {
     const [user] = useAuthState(auth)
     const [admin] = useAdmin(user)
     return (
-        <header class="text-white body-font border-b-2">
-            <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row">
-                <nav class="flex flex-wrap items-center text-base">
+        <header className="text-white body-font border-b-2">
+            <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row">
+                <nav className="flex flex-wrap items-center text-base">
                     <ActiveLink
                         to="profile"
                         className={`text-white my-3 border border-orange-500 hover:bg-orange-500 hover:text-black duration-500 px-3 py-2 rounded-md text-xl font-semibold mx-3 flex justify-center items-center`}

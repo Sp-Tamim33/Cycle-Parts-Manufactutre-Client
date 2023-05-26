@@ -56,7 +56,7 @@ const AddRivew = () => {
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="mb-3 ">
                             <div>
-                                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your Name</label>
+                                <label for="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your Name</label>
                                 <input
                                     id='name'
                                     required
@@ -66,7 +66,7 @@ const AddRivew = () => {
                                 />
                             </div>
                             <div>
-                                <label for="position" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your position</label>
+                                <label for="position" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your position</label>
                                 <input
                                     id='position'
                                     required
@@ -76,7 +76,7 @@ const AddRivew = () => {
                                 />
                             </div>
                             <div>
-                                <label for="rating" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Add Rating</label>
+                                <label for="rating" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Add Rating</label>
                                 <input
                                     id='rating'
                                     className="block p-2.5 w-80 text-sm text-gray-900 bg-gray-50 rounded-lg border border-orange-500 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
@@ -88,13 +88,13 @@ const AddRivew = () => {
                         </div>
                         <div className="mb-3 ">
 
-                            <label for="file_input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Add Your Photo</label>
-                            <input {...register("image")} required class="block p-2.5 w-80 text-sm text-gray-900 bg-gray-50 rounded-lg border border-orange-500 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500" id="file_input" type="file" />
+                            <label for="file_input" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Add Your Photo</label>
+                            <input {...register("image")} required className="block p-2.5 w-80 text-sm text-gray-900 bg-gray-50 rounded-lg border border-orange-500 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500" id="file_input" type="file" />
                         </div>
 
                         <div>
-                            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your message</label>
-                            <textarea {...register("description")} required id="message" rows="4" class="block p-2.5 w-80 text-sm text-gray-900 bg-gray-50 rounded-lg border border-orange-500 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500" placeholder="Your Opinion..."></textarea>
+                            <label for="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your message</label>
+                            <textarea {...register("description")} required id="message" rows="4" className="block p-2.5 w-80 text-sm text-gray-900 bg-gray-50 rounded-lg border border-orange-500 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500" placeholder="Your Opinion..."></textarea>
                         </div>
 
                         <div className="mt-5">
