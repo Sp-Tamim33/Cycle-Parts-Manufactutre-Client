@@ -5,7 +5,7 @@ const UserRow = ({ user, index }) => {
 
 
     const makeAdmin = () => {
-        fetch(`https://ancient-citadel-87050.herokuapp.com/users/admin/${user.email}`, {
+        fetch(`https://cycle-tools-server-production.up.railway.app/users/admin/${user.email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

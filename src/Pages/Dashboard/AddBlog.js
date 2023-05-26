@@ -24,7 +24,7 @@ const AddBlog = () => {
                         question: data.question,
                         description: data.description
                     }
-                    fetch('https://ancient-citadel-87050.herokuapp.com/blogs', {
+                    fetch('https://cycle-tools-server-production.up.railway.app/blogs', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

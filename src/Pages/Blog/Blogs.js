@@ -4,7 +4,7 @@ import Blog from './Blog';
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
     useEffect(() => {
-        fetch('https://ancient-citadel-87050.herokuapp.com/blogs', {
+        fetch('https://cycle-tools-server-production.up.railway.app/blogs', {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

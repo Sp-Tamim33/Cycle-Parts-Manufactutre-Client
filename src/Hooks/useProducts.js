@@ -4,7 +4,7 @@ const useProducts = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        const url = 'https://ancient-citadel-87050.herokuapp.com/products'
+        const url = 'https://cycle-tools-server-production.up.railway.app/products'
         fetch(url)
             .then(res => res.json())
             .then(data => setProducts(data))

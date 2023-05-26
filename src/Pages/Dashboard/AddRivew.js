@@ -26,7 +26,7 @@ const AddRivew = () => {
                         description: data.description,
 
                     }
-                    fetch(`https://ancient-citadel-87050.herokuapp.com/reviews`, {
+                    fetch(`https://cycle-tools-server-production.up.railway.app/reviews`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

@@ -8,7 +8,7 @@ const SingleBlog = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`https://ancient-citadel-87050.herokuapp.com/blogs/${id}`)
+        fetch(`https://cycle-tools-server-production.up.railway.app/blogs/${id}`)
             .then(res => res.json())
             .then(data => setBlog(data))
     }, [blog, id])

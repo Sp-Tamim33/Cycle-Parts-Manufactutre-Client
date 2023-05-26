@@ -20,7 +20,7 @@ const Purchase = () => {
     const { MinimumOrder } = product;
     const [increaseDecrease, setIncreaseDecrease] = useState(0);
     useEffect(() => {
-        fetch(`https://ancient-citadel-87050.herokuapp.com/product/${id}`)
+        fetch(`https://cycle-tools-server-production.up.railway.app/product/${id}`)
             .then(res => res.json())
             .then(data => {
                 setProduct(data)
@@ -72,7 +72,7 @@ const Purchase = () => {
         const number = event.target.number.value;
         const address = event.target.address.value;
 
-        fetch('https://ancient-citadel-87050.herokuapp.com/orders', {
+        fetch('https://cycle-tools-server-production.up.railway.app/orders', {
             method: "POST",
             headers: {
                 "Content-type": "application/json"
