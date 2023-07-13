@@ -5,7 +5,7 @@ const useProducts = () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        const url = 'https://cycle-tools-server-production.up.railway.app/products'
+        const url = 'https://cycle-tools-server.onrender.com/products'
         fetch(url)
             .then(res => res.json())
             .then(data => {

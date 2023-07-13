@@ -6,7 +6,7 @@ const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
-        fetch('https://cycle-tools-server-production.up.railway.app/blogs', {
+        fetch('https://cycle-tools-server.onrender.com/blogs', {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

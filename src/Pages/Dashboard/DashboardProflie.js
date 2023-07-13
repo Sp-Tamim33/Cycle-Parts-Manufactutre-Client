@@ -13,7 +13,7 @@ const DashboardProflie = () => {
     const { register, handleSubmit, reset } = useForm();
 
     useEffect(() => {
-        fetch(`https://cycle-tools-server-production.up.railway.app/users/${user.email}`)
+        fetch(`https://cycle-tools-server.onrender.com/users/${user.email}`)
             .then(res => res.json())
             .then(updatedUser => setUserInfo(updatedUser))
     }, [user, userInfo])
@@ -48,7 +48,7 @@ const DashboardProflie = () => {
                         facebook: data.facebook,
                         email: user.email
                     }
-                    fetch(`https://cycle-tools-server-production.up.railway.app/users/${user.email}`, {
+                    fetch(`https://cycle-tools-server.onrender.com/users/${user.email}`, {
                         method: 'PUT',
                         headers: {
                             'content-type': 'application/json'

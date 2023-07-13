@@ -7,7 +7,7 @@ const useToken = user => {
         const email = user?.user?.email;
         const currentUser = { email: email }
         if (email) {
-            fetch(`https://cycle-tools-server-production.up.railway.app/users/${email}`, {
+            fetch(`https://cycle-tools-server.onrender.com/users/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

@@ -5,7 +5,7 @@ import Testimonial from './Testimonial';
 const Testimonials = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('https://cycle-tools-server-production.up.railway.app/reviews')
+        fetch('https://cycle-tools-server.onrender.com/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])

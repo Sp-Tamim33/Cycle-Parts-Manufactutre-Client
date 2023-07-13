@@ -24,7 +24,7 @@ const AddBlog = () => {
                         question: data.question,
                         description: data.description
                     }
-                    fetch('https://cycle-tools-server-production.up.railway.app/blogs', {
+                    fetch('https://cycle-tools-server.onrender.com/blogs', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

@@ -26,7 +26,7 @@ const AddRivew = () => {
                         description: data.description,
 
                     }
-                    fetch(`https://cycle-tools-server-production.up.railway.app/reviews`, {
+                    fetch(`https://cycle-tools-server.onrender.com/reviews`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

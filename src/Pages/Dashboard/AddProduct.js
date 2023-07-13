@@ -26,7 +26,7 @@ const AddProduct = () => {
                         MinimumOrder: data.minimumOrder,
                         available: data.available
                     }
-                    fetch('https://cycle-tools-server-production.up.railway.app/products', {
+                    fetch('https://cycle-tools-server.onrender.com/products', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

@@ -8,7 +8,7 @@ const ManageProducts = () => {
     const handleDelete = (id) => {
         const userConfirm = window.confirm('are you sure to delete ?')
         if (userConfirm) {
-            fetch(`https://cycle-tools-server-production.up.railway.app/product/${id}`, {
+            fetch(`https://cycle-tools-server.onrender.com/product/${id}`, {
                 method: 'DELETE',
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
