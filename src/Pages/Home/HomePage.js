@@ -5,12 +5,14 @@ import Products from '../../Components/Products/Products';
 import Testimonials from '../../Components/Testimonials/Testimonials';
 import NewsLetter from '../../Components/NewsLetter/NewsLetter';
 import Contact from '../../Components/Contact/Contact';
+import Aboutus from '../../Components/AboutUs/Aboutus';
 
 const Home = () => {
     return (
         <div>
             <Banner />
             <Overview />
+            <Aboutus />
             <Products />
             <Testimonials />
             <NewsLetter />
