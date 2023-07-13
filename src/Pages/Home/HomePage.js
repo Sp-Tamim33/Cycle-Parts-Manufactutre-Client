@@ -7,6 +7,7 @@ import NewsLetter from '../../Components/NewsLetter/NewsLetter';
 import Contact from '../../Components/Contact/Contact';
 import Aboutus from '../../Components/AboutUs/Aboutus';
 import Business from '../../Components/Business/Business';
+import Text from '../../Components/Text/Text';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <Banner />
             <Overview />
             <Aboutus />
+            <Text />
             <Products />
             <Business />
             <Testimonials />
